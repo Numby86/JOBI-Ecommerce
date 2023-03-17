@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { BookDetailRoutingModule } from './book-detail-routing.module';
 import { BookDetailComponent } from './book-detail.component';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { BookDetailComponent } from './book-detail.component';
   ],
   imports: [
     CommonModule,
-    BookDetailRoutingModule
+    BookDetailRoutingModule,
+    RouterModule
   ]
 })
 export class BookDetailModule { }
