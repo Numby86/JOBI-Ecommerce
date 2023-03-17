@@ -1,1 +1,22 @@
-<p>book-detail works!</p>
+<div
+*ngIf="book; else bookNotFound">
+<img [src]="book.image">
+</div>
+<div *ngIf="book; else bookNotFound">
+    <p>{{ book.name }}</p>
+    <p>{{ book.price }}€</p>
+    <p>{{ book.description }}</p>
+    <p>{{ book.type }}</p>
+    <p>{{ book.author }}</p>
+    <p>Nº de páginas: {{ book.pages }}</p>
+    <p>Editorial: {{ book.editorial }}</p>
+    <p>Idioma: {{ book.languague }}</p>
+    <p>Encuadernación: {{ book.bookbinding }}</p>
+    <p>Año de edición: {{ book.yearEdition }}</p>
+    <p>ISBN: {{ book.isbn }}</p>
+</div>
+
+
+<ng-template #bookNotFound>
+    <p>No hay un libro con ese Id</p>
+</ng-template>

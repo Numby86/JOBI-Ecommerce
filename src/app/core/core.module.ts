@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { LoadingComponent } from './components/loading/loading.component';
+import { RouterLink, RouterModule } from '@angular/router';
 
 
 
@@ -13,7 +14,9 @@ import { LoadingComponent } from './components/loading/loading.component';
     LoadingComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterLink,
+    RouterModule
   ],
   exports: [
     HeaderComponent,

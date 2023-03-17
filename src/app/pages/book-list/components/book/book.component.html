@@ -1,0 +1,10 @@
+<div
+*ngIf="book"
+class="book">
+    <img [src]="book.image" alt="image_book" class="book__img" routerLink="/detail/{{ book._id }}">
+    <div>
+        <p>{{ book.name }}</p>
+        <p>{{ book.price }}</p>
+    </div>
+    <button (click)="navigateToDetail()">Ver detalle</button>
+</div>
