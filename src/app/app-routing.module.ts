@@ -21,6 +21,14 @@ const routes: Routes = [
     loadChildren: () => import('./pages/book-detail/book-detail.module').then(m=> m.BookDetailModule)
   },
   {
+    path: 'videogames',
+    loadChildren: () => import('./pages/videogame-list/videogame-list.module').then(m => m.VideogameListModule)
+  },
+  {
+    path: 'videogames/:id',
+    loadChildren: () => import('./pages/videogame-detail/videogame-detail.module').then(m => m.VideogameDetailModule)
+   },
+  {
     path: '*',
     loadChildren: () => import('./pages/home/home.module').then(m=> m.HomeModule)
   }

@@ -1,1 +1,21 @@
 <p>videogame-detail works!</p>
+<div
+    *ngIf="videogame"
+>
+    <div>
+        <img 
+            [src]="videogame.image" 
+            alt="imagen {{ videogame.name }}"
+        >
+        <h2>{{ videogame.name }}</h2>
+        <p>{{ videogame.description }}</p>
+        <p>{{ videogame.plataforma }}</p>
+        <p>{{ videogame.category }}</p>
+        <p>{{ videogame.price }}</p>
+        <p>{{ videogame.stock }}</p>
+    </div>
+</div>
+<button
+class="btn"
+(click)="backToList()"
+>GO LIST</button>
