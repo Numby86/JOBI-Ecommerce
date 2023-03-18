@@ -1,17 +1,26 @@
+import { SharedModule } from './../../shared/shared.module';
+import { RouterLink, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { GarmentListRoutingModule } from './garment-list-routing.module';
 import { GarmentListComponent } from './garment-list.component';
-
+import { GarmentComponent } from './components/garment/garment.component';
 
 @NgModule({
   declarations: [
-    GarmentListComponent
+    GarmentListComponent,
+    GarmentComponent,
+    
   ],
   imports: [
     CommonModule,
-    GarmentListRoutingModule
+    GarmentListRoutingModule,
+    RouterModule,
+    SharedModule
+  ],
+  exports: [
+    GarmentListComponent
   ]
 })
 export class GarmentListModule { }
