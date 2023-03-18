@@ -2,7 +2,7 @@
 <div
 *ngIf="garment"
 class="garment">
-    <img [src]="garment.image" alt="image_garment" class="garment__img" routerLink="/detail/{{ garment._id }}">
+    <img [src]="garment.image" alt="image_garment" class="garment__img" routerLink="/garmentDetail/{{ garment._id }}">
     <div>
         <p>{{ garment.name }}</p>
         <p>{{ garment.price }}</p>
