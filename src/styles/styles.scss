@@ -3,3 +3,11 @@
 @import "./animations/animations.scss";
 @import "./colors/colors.scss";
 @import "./fonts/fonts.scss";
+
+body{
+    font-weight: bold;
+    font-family: Helvetica;
+}
+a{
+    text-decoration: none;
+}
