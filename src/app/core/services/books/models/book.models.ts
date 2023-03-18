@@ -1,0 +1,15 @@
+export interface Book {
+    _id: string,
+    name: string,
+    price: number,
+    image: string,
+    description: string,
+    type: string[],
+    author: string[],
+    pages: number,
+    editorial: string,
+    languague: string,
+    bookbinding: string,
+    yearEdition: number,
+    isbn: number,
+}
