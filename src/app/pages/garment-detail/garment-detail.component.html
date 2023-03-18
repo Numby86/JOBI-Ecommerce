@@ -1,1 +1,19 @@
 <p>garment-detail works!</p>
+<div
+*ngIf="garment; else garmentNotFound">
+<img [src]="garment.image">
+</div>
+<div *ngIf="garment; else garmentNotFound">
+    <p>{{ garment.name }}</p>
+    <p>{{ garment.price }}€</p>
+    <p>{{ garment.description }}</p>
+    <p>{{ garment.stock }}</p>
+    <p>{{ garment.color }}</p>
+    <p>{{ garment.size }}</p>
+  
+</div>
+
+
+<ng-template #garmentNotFound>
+    <p>No hay un ropa con ese Id</p>
+</ng-template>
