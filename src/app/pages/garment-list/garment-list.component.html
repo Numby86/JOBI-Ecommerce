@@ -1,1 +1,9 @@
-<p>garment-list works!</p>
+<p>Listado de productos</p>
+
+<div *ngIf="garments" class="garments" >
+    <app-garment
+        *ngFor="let garmentEl of garments"
+        [garment]="garmentEl"
+    >
+    </app-garment>
+</div>   
