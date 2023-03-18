@@ -15,7 +15,7 @@ export class GarmentComponent {
 
   public navigateToDetail() { 
     if(this.garment) {
-      this.router.navigate(['detail', this.garment._id])
+      this.router.navigate(['garmentDetail', this.garment._id])
     }
   }
 
