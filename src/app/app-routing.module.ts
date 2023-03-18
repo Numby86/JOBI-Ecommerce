@@ -28,6 +28,14 @@ const routes: Routes = [
     path: 'videogames/:id',
     loadChildren: () => import('./pages/videogame-detail/videogame-detail.module').then(m => m.VideogameDetailModule)
    },
+   {
+    path: 'garment-list',
+    loadChildren: () => import('./pages/garment-list/garment-list.module').then(m => m.GarmentListModule)
+  },
+  {
+    path: 'detail/:id',
+    loadChildren: () => import('./pages/garment-detail/garment-detail.module').then(m=> m.GarmentDetailModule)
+  },
   {
     path: '*',
     loadChildren: () => import('./pages/home/home.module').then(m=> m.HomeModule)
