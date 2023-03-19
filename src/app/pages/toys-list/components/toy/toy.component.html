@@ -1,0 +1,24 @@
+<div>
+  <p>Este es el modulo de lista de jugeutes!!!</p>
+</div>
+<div *ngIf="toy">
+  <div>
+    <img
+      [src]="toy.image"
+      alt="product_image"
+      routerLink="/toysDetail/{{ toy._id }}"
+    />
+  </div>
+  <div>
+    <div>
+      <p>{{ toy.name }}</p>
+      <p>{{ toy.brand }}</p>
+    </div>
+    <div>
+      <p>Price: {{ toy.price }}</p>
+    </div>
+    <div>
+      <button (click)="showMore()">View More</button>
+    </div>
+  </div>
+</div>
