@@ -4,6 +4,7 @@ import { LoginJWT, Login } from './login.model';
 import { Observable, tap, ReplaySubject } from 'rxjs';
 import { Register } from './register.model';
 import { HttpClient } from '@angular/common/http';
+import { LoadingService } from './../loading/loading.service';
 
 const API_URL_REGISTER = 'https://nodejs-proyectodb-mpl0haqpi-numby86.vercel.app/user/register';
 
@@ -22,6 +23,7 @@ export class UserServiceService {
   constructor(
     private http: HttpClient,
     private router: Router,
+    private loadingService: LoadingService
   ) { 
     this.userLogged$.next(this.isLogged());
    }
@@ -31,6 +33,7 @@ export class UserServiceService {
   }
 
   public loginApiUser(body: Login): Observable<LoginJWT>{
+    this.loadingService.showLoading();
     return this.http.post<LoginJWT>(`${API_URL_LOGIN_JWT}`, body).pipe(
       tap((res: LoginJWT) => {
         const userStore = JSON.stringify({
@@ -42,6 +45,7 @@ export class UserServiceService {
         this.userLogged$.next(true);
         this.router.navigate(['home']);
       }),
+      tap(() => this.loadingService.hideLoading())
     )
   }
 

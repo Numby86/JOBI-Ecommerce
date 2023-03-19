@@ -1,0 +1,18 @@
+.loading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: calc(100% - 50%);
+    margin: auto;
+    margin-bottom: 100px;
+    margin-top: 100px;
+}
+.loader {
+    width: 150px;
+    height: 150px;
+    border: solid 4px rgba(231, 231, 231, 0);
+    border-top: solid 15px cadetblue;
+    border-radius: 50%;
+    transition: all 0.5s;
+    animation: myRotation 1.2s infinite cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
