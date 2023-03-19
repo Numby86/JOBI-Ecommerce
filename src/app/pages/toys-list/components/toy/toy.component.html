@@ -1,24 +1,16 @@
-<div>
-  <p>Este es el modulo de lista de jugeutes!!!</p>
-</div>
-<div *ngIf="toy">
-  <div>
+<div 
+*ngIf="toy"
+class="card">
+ 
     <img
       [src]="toy.image"
       alt="product_image"
+      class="card__img"
       routerLink="/toysDetail/{{ toy._id }}"
     />
-  </div>
   <div>
-    <div>
       <p>{{ toy.name }}</p>
-      <p>{{ toy.brand }}</p>
-    </div>
-    <div>
-      <p>Price: {{ toy.price }}</p>
-    </div>
-    <div>
-      <button (click)="showMore()">View More</button>
+      <p>{{ toy.price }} €</p>
     </div>
   </div>
-</div>
+

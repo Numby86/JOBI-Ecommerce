@@ -1,6 +1,20 @@
-<div *ngIf="toys">
+<div *ngIf="toys" class="cards">
   <app-toy
-    *ngFor="let eachToy of toys"
+    *ngFor="let eachToy of toys | paginate: { id: 'foo',
+    itemsPerPage: 15,
+    currentPage: page,
+    totalItems: 60 }"
     [toy]="eachToy">
   </app-toy>
+</div>
+<div
+class="pagination"
+>
+  <pagination-controls 
+  (pageChange)="page = $event" 
+  id="foo"
+  previousLabel="Previous"
+  nextLabel="Next"
+  >
+  </pagination-controls>
 </div>
