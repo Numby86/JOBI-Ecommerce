@@ -1,11 +1,12 @@
-
 <div
 *ngIf="garment"
 class="card">
-    <img [src]="garment.image" alt="image_garment" class="card__img" routerLink="/garmentDetail/{{ garment._id }}">
+    <img 
+    [src]="garment.image" 
+    alt="image_garment" 
+    class="card__img" routerLink="/garmentDetail/{{ garment._id }}">
     <div>
         <p class="card__name">{{ garment.name }}</p>
         <p class="card__price">{{ garment.price }} €</p>
     </div>
-   
 </div>

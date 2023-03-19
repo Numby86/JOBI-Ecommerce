@@ -10,6 +10,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ToysListComponent implements OnInit{
 
+  page: number = 1;
   public toy?: ToysInterface;
   public toys: ToysInterface[] = [];
 
