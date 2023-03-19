@@ -1,4 +1,21 @@
 <div class="header">
+
+<div
+*ngIf="logged"
+class="logout"
+>
+    <img
+    (click)="addButton()"
+    class="logged" 
+    src="https://upload.wikimedia.org/wikipedia/commons/d/d3/User_Circle.png" 
+    alt="user logged">
+    <button
+    (click)="cerrarSesion()"
+    *ngIf="logOut"
+    class="button"
+    >LOGOUT</button>
+</div>
+
   <div>
     <a  [routerLink]="['home']">
       <img class="logo" src="../../../../assets/public/img/logo-jovi.svg" />
@@ -12,6 +29,15 @@
         <a class="header__nav_a" [routerLink]="['garment-list']"> Ropa </a>
         <a class="header__nav_a" [routerLink]="['videogames']"> Videojuegos </a>
         <a class="header__nav_a" [routerLink]="['toys']"> Juguetes </a>
+        <a [routerLink]="['login']">
+             <i class="fa-solid fa-user"></i>
+         </a>
+         <a [routerLink]="['register']">
+                <i class="fa-solid fa-users"></i>
+         </a>
+         <a [routerLink]="['cart']">
+              <i class="fa-solid fa-cart-shopping"></i>
+         </a>
       </li>
     </ul>
   </nav>

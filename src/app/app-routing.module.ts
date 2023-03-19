@@ -1,6 +1,6 @@
+import { CartComponent } from './shared/components/cart/cart.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { BookListModule } from './pages/book-list/book-list.module';
 
 const routes: Routes = [
   {
@@ -35,6 +35,18 @@ const routes: Routes = [
   {
     path: 'garmentDetail/:id',
     loadChildren: () => import('./pages/garment-detail/garment-detail.module').then(m=> m.GarmentDetailModule)
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./pages/user/login/login.module').then(m => m.LoginModule)
+  },
+  {
+    path: 'register',
+    loadChildren: () => import('./pages/user/register/register.module').then(m => m.RegisterModule)
+  },
+  {
+    path: 'cart',
+    component: CartComponent
   },
   {
     path: '*',
