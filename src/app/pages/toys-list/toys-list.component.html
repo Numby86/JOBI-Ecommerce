@@ -1,0 +1,6 @@
+<div *ngIf="toys">
+  <app-toy>
+    *ngFor="let eachToy of toys"
+    [toy]="eachToy">
+  </app-toy>
+</div>

@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BookListModule } from './pages/book-list/book-list.module';
+import { ToysListModule } from './pages/toys-list/toys-list.module';
+import { ToysDetailModule } from './pages/toys-detail/toys-detail.module';
 
 const routes: Routes = [
   {
@@ -19,6 +21,14 @@ const routes: Routes = [
   {
     path: 'detail/:id',
     loadChildren: () => import('./pages/book-detail/book-detail.module').then(m=> m.BookDetailModule)
+  },
+  {
+    path:'toys-list',
+    loadChildren: () => import('./pages/toys-list/toys-list.module').then(m=> m.ToysListModule)
+  },
+  {
+    path:'toysDetail/:id',
+    loadChildren: () => import('./pages/toys-detail/toys-detail.module').then(m=> m.ToysDetailModule)
   },
   {
     path: '*',
