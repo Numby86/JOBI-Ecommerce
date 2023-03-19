@@ -10,6 +10,7 @@ import { Garment } from 'src/app/core/services/garments/models/garment.models';
 })
 export class GarmentListComponent implements OnInit {
 
+  page: number = 1;
   public garment?: Garment;
   public garments: Garment[] = [];
   
