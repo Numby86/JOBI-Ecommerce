@@ -1,9 +1,21 @@
-
-
 <div *ngIf="garments" class="cards" >
     <app-garment
-        *ngFor="let garmentEl of garments"
+        *ngFor="let garmentEl of garments | paginate: { id: 'foo',
+        itemsPerPage: 15,
+        currentPage: page,
+        totalItems: 40 }"
         [garment]="garmentEl"
     >
     </app-garment>
-</div>   
+</div>
+<div
+class="pagination"
+>
+    <pagination-controls 
+    (pageChange)="page = $event" 
+    id="foo"
+    previousLabel="Previous"
+    nextLabel="Next"
+    >
+    </pagination-controls>
+</div>

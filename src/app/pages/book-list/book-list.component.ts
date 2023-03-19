@@ -10,7 +10,8 @@ import { Book } from 'src/app/core/services/books/models/book.models';
 })
 export class BookListComponent implements OnInit{
 
- public book?: Book;
+  page: number = 1;
+  public book?: Book;
   public books: Book[] = [];
 
   constructor(

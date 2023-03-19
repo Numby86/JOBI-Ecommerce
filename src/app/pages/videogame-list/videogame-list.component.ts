@@ -10,8 +10,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VideogameListComponent implements OnInit {
 
+  page: number = 1;
   public videogames: Videogames[] = [];
-
+  
   constructor(
     private router: Router,
     private videogamesService: VideogamesService

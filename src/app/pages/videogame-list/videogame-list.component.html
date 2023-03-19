@@ -1,7 +1,10 @@
 <div class="cards">
   <div
     class="card"
-    *ngFor="let videogame of videogames"
+    *ngFor="let videogame of videogames | paginate: { id: 'foo',
+    itemsPerPage: 15,
+    currentPage: page,
+    totalItems: 60 }"
     (click)="goToDetail(videogame._id)"
   >
    
@@ -15,4 +18,15 @@
      
     <p class="card__price">{{ videogame.price }} €</p>
   </div>
+</div>
+<div
+class="pagination"
+>
+  <pagination-controls 
+  (pageChange)="page = $event" 
+  id="foo"
+  previousLabel="Previous"
+  nextLabel="Next"
+  >
+  </pagination-controls>
 </div>
