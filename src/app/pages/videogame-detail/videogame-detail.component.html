@@ -1,18 +1,20 @@
-<p>videogame-detail works!</p>
-<div
+<div class="card-detail"
     *ngIf="videogame"
 >
     <div>
-        <img 
+        <img class="card-detail__img"
             [src]="videogame.image" 
             alt="imagen {{ videogame.name }}"
         >
-        <h2>{{ videogame.name }}</h2>
-        <p>{{ videogame.description }}</p>
-        <p>{{ videogame.plataforma }}</p>
-        <p>{{ videogame.category }}</p>
-        <p>{{ videogame.price }}</p>
-        <p>{{ videogame.stock }}</p>
+        </div>
+        <div class="card-detail__content">
+            <p class="card-detail__content__name">{{ videogame.name }}</p>
+            <p class="card-detail__content__price">{{ videogame.price }}€</p>
+        <p class="card-detail__content__description">{{ videogame.description }}</p>
+        <p class="card-detail__content__plataforma">Plataforma: {{ videogame.plataforma }}</p>
+        <p class="card-detail__content__category">Categoría: {{ videogame.category }}</p>
+        
+        <p class="card-detail__content__stock">En stock: {{ videogame.stock }}</p>
     </div>
 </div>
 <button

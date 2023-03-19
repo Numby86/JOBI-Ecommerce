@@ -1,26 +1,18 @@
-<p>header works!</p>
+<div class="header">
+  <div>
+    <a  [routerLink]="['home']">
+      <img class="logo" src="../../../../assets/public/img/logo-jovi.svg" />
+    </a>
+  </div>  
 
-<nav>
-    <ul>
-        <li>
-            <a [routerLink]="['home']">
-                Home
-            </a>
-        </li>
-
-        <li>
-            <a [routerLink]="['book-list']">
-                Libros
-            </a>
-            <a [routerLink]="['garment-list']">
-                Ropa
-            </a>
-            <a [routerLink]="['videogames']">
-                Videojuegos
-            </a>
-            <a [routerLink]="['toys']">
-                Juguetes
-            </a>
-        </li>
+  <nav class="header__nav">
+    <ul class="header__nav_ul">
+      <li class="header__nav_li">
+        <a class="header__nav_a" [routerLink]="['book-list']"> Libros </a>
+        <a class="header__nav_a" [routerLink]="['garment-list']"> Ropa </a>
+        <a class="header__nav_a" [routerLink]="['videogames']"> Videojuegos </a>
+        <a class="header__nav_a" [routerLink]="['toys']"> Juguetes </a>
+      </li>
     </ul>
-</nav>
+  </nav>
+</div>
