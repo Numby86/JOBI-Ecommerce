@@ -1,15 +1,19 @@
-<p>garment-detail works!</p>
-<div
-*ngIf="garment; else garmentNotFound">
-<img [src]="garment.image">
+<div class="card-detail"
+*ngIf="garment;">
+
+    <div>
+<img class="card-detail__img"[src]="garment.image">
 </div>
-<div *ngIf="garment; else garmentNotFound">
-    <p>{{ garment.name }}</p>
-    <p>{{ garment.price }}€</p>
-    <p>{{ garment.description }}</p>
-    <p>{{ garment.stock }}</p>
-    <p>{{ garment.color }}</p>
-    <p>{{ garment.size }}</p>
+
+<div class="card-detail__content" *ngIf="garment; else garmentNotFound">
+    <p class="card-detail__content__name">{{ garment.name }}</p>
+    <p class="card-detail__content__price">{{ garment.price }}€</p>
+    <p class="card-detail__content__description">{{ garment.description }}</p>
+    <p class="card-detail__content__size">Talla: {{ garment.size }}</p>
+   
+    <p class="card-detail__content__color">Color: {{ garment.color }}</p>
+    <p class="card-detail__content__stock">En stock: {{ garment.stock }}</p>        
+   
   
 </div>
 
@@ -17,3 +21,5 @@
 <ng-template #garmentNotFound>
     <p>No hay un ropa con ese Id</p>
 </ng-template>
+
+</div>

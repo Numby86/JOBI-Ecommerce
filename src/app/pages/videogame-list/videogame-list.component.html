@@ -1,38 +1,18 @@
-<div
-    class="component"
->
-    <div
-        class="component__card"
-        *ngFor="let videogame of videogames"
-        (click)="goToDetail(videogame._id)"
-    >
-        <div
-            class="component__card-NP"
-        >
-            <h3
-                class="component__card-name"
-            >{{ videogame.name }}</h3>
-            <p
-                class="component__card-plataforma"
-            >{{ videogame.plataforma }}</p>
-        </div>
-        <img
-            class="component__card-image"
-            [src]="videogame.image" 
-            alt="imagen {{ videogame.name }}">
-        <p
-            class="component__card-description"
-        >{{ videogame.description }}</p>
+<div class="cards">
+  <div
+    class="card"
+    *ngFor="let videogame of videogames"
+    (click)="goToDetail(videogame._id)"
+  >
+   
+    <img
+      class="card__img"
+      [src]="videogame.image"
+      alt="imagen {{ videogame.name }}"
+    />
 
-        <div
-            class="component__card-SP"
-        >
-            <p
-                class="component__card-price"
-            >{{ videogame.price }} €</p>
-            <p
-                class="component__card-stock"
-            >Stock: {{ videogame.stock }}</p>
-        </div>
-    </div>
+        <p class="card__name">{{ videogame.name }}</p>
+     
+    <p class="card__price">{{ videogame.price }} €</p>
+  </div>
 </div>

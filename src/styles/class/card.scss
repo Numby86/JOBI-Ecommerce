@@ -1,0 +1,39 @@
+.cards {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  padding: 24px;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.card {
+  width: 400px;
+  margin-right: 24px;
+  box-shadow: 0.5em 0.3em 0.7em #00000025;
+  margin-bottom: 24px;
+  background: rgb(255, 255, 255);
+  transition: border 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: rgb(255, 255, 255) 0.2em solid;
+  font-family: Arial, Helvetica, sans-serif;
+  cursor: pointer;
+
+  &__img {
+    width: 400px;
+    height: 600px;
+    object-fit: cover;
+  }
+  &__name {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 19px;
+  }
+  &__price {
+    text-align: center;
+    font-size: 19px;
+  }
+}
+
+.card:hover {
+  border: #222E3A 0.2em solid;
+}
