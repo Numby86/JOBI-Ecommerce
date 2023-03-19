@@ -1,8 +1,7 @@
+import { CartComponent } from './shared/components/cart/cart.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { BookListModule } from './pages/book-list/book-list.module';
-import { ToysListModule } from './pages/toys-list/toys-list.module';
-import { ToysDetailModule } from './pages/toys-detail/toys-detail.module';
+
 
 const routes: Routes = [
   {
@@ -23,12 +22,40 @@ const routes: Routes = [
     loadChildren: () => import('./pages/book-detail/book-detail.module').then(m=> m.BookDetailModule)
   },
   {
+    path: 'videogames',
+    loadChildren: () => import('./pages/videogame-list/videogame-list.module').then(m => m.VideogameListModule)
+  },
+  {
+    path: 'videogames/:id',
+    loadChildren: () => import('./pages/videogame-detail/videogame-detail.module').then(m => m.VideogameDetailModule)
+   },
+   {
+    path: 'garment-list',
+    loadChildren: () => import('./pages/garment-list/garment-list.module').then(m => m.GarmentListModule)
+  },
+  {
+    path: 'garmentDetail/:id',
+    loadChildren: () => import('./pages/garment-detail/garment-detail.module').then(m=> m.GarmentDetailModule)
+  },
+    {
     path:'toys-list',
     loadChildren: () => import('./pages/toys-list/toys-list.module').then(m=> m.ToysListModule)
   },
   {
     path:'toysDetail/:id',
     loadChildren: () => import('./pages/toys-detail/toys-detail.module').then(m=> m.ToysDetailModule)
+  },  
+  {
+    path: 'login',
+    loadChildren: () => import('./pages/user/login/login.module').then(m => m.LoginModule)
+  },
+  {
+    path: 'register',
+    loadChildren: () => import('./pages/user/register/register.module').then(m => m.RegisterModule)
+  },
+  {
+    path: 'cart',
+    component: CartComponent
   },
   {
     path: '*',

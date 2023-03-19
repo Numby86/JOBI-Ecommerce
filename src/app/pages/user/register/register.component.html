@@ -1,0 +1,94 @@
+<div
+class="form"
+>
+    <form
+    *ngIf="regForm"
+    (submit)="sendFormulario()"
+    class="form__content"
+    [formGroup]="regForm"
+    >
+        <input
+        name="name"
+        formControlName="name"
+        placeholder="Introduzca su nombre" 
+        class="form__content-name"
+        type="text">
+        <p
+      *ngIf="!regForm.get('name')?.valid 
+        && regForm.get('name')?.dirty  
+        && regForm.get('name')?.errors?.['required']"
+    >El valor está requerido</p>
+        <input
+        name="surname"
+        formArrayName="surname"
+        placeholder="Introduzca sus apellidos" 
+        class="form__content-surname"
+        type="text">
+        <input
+        name="phone"
+        formControlName="phone"
+        placeholder="Introduzca su telefono" 
+        class="form__content-phone"
+        type="text">
+        <p
+    *ngIf="!regForm.get('phone')?.valid 
+      && regForm.get('phone')?.touched 
+      && regForm.get('phone')?.errors?.['minlength']"
+  >El telefono debe 9 caracteres</p>
+  <p
+    *ngIf="!regForm.get('phone')?.valid 
+      && regForm.get('phone')?.dirty 
+      && regForm.get('phone')?.errors?.['maxlength']"
+  >El telefono debe 9 caracteres</p>
+  <p
+    *ngIf="!regForm.get('phone')?.valid 
+      && regForm.get('phone')?.dirty 
+      && regForm.get('phone')?.errors?.['pattern']"
+  >Solo se pueden usar numeros en este campo</p>
+        <input
+        name="email"
+        formControlName="email"
+        placeholder="Introduzca su email" 
+        class="form__content-email"
+        type="text">
+        <p
+    *ngIf="!regForm.get('email')?.valid 
+      && regForm.get('email')?.dirty 
+      && regForm.get('email')?.errors?.['required']"
+  >El valor está requerido</p>
+  <p
+    *ngIf="!regForm.get('email')?.valid 
+      && regForm.get('email')?.touched 
+      && regForm.get('email')?.errors?.['pattern']"
+  >No es un formato de email valido</p>
+        <input
+        name="password"
+        formControlName="password"
+        placeholder="Introduzca su contraseña" 
+        class="form__content-password"
+        type="password">
+        <p
+    *ngIf="!regForm.get('password')?.valid 
+      && regForm.get('password')?.dirty 
+      && regForm.get('password')?.errors?.['required']"
+  >El valor está requerido</p>
+  <p
+    *ngIf="!regForm.get('password')?.valid 
+      && regForm.get('password')?.dirty 
+      && regForm.get('password')?.errors?.['maxlength']"
+  >La contraseña debe tener entre 4 y 12 caracteres</p>
+  <p
+    *ngIf="!regForm.get('password')?.valid 
+      && regForm.get('password')?.touched  
+      && regForm.get('password')?.errors?.['minlength']"
+  >La contraseña debe tener entre 4 y 12 caracteres</p>
+        <p 
+        *ngIf="userError"
+        class="form__content-error"
+        >{{ userError }}</p>
+        <button
+        [disabled]="!regForm.valid"
+        type="submit"
+        class="button">ENVIAR</button>
+    </form>
+</div>

@@ -1,1 +1,9 @@
-<p>garment-list works!</p>
+
+
+<div *ngIf="garments" class="cards" >
+    <app-garment
+        *ngFor="let garmentEl of garments"
+        [garment]="garmentEl"
+    >
+    </app-garment>
+</div>   

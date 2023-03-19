@@ -6,6 +6,7 @@ import { SortPipe } from './pipes/sort/sort.pipe';
 import { FilterPipe } from './pipes/filter/filter.pipe';
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
+import { CartComponent } from './components/cart/cart.component';
 
 
 
@@ -16,10 +17,16 @@ import { ProductDetailComponent } from './components/product-detail/product-deta
     SortPipe,
     FilterPipe,
     ProductListComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    CartComponent
   ],
   imports: [
     CommonModule
+  ],
+  exports: [
+    CartComponent,
+    ProductListComponent,
+    ProductDetailComponent
   ]
 })
 export class SharedModule { }

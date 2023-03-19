@@ -1,1 +1,18 @@
-<p>videogame-list works!</p>
+<div class="cards">
+  <div
+    class="card"
+    *ngFor="let videogame of videogames"
+    (click)="goToDetail(videogame._id)"
+  >
+   
+    <img
+      class="card__img"
+      [src]="videogame.image"
+      alt="imagen {{ videogame.name }}"
+    />
+
+        <p class="card__name">{{ videogame.name }}</p>
+     
+    <p class="card__price">{{ videogame.price }} €</p>
+  </div>
+</div>

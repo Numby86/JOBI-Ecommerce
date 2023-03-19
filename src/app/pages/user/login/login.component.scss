@@ -1,0 +1,17 @@
+.form__content-loginNotUser{
+    color: #777;
+    margin-bottom: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    & a{
+        border-radius: 5px;
+        padding: 3px;
+        cursor: pointer;
+        &:hover{
+            background-color: cadetblue;
+            color: white;
+        }
+    }
+  }

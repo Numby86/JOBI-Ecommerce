@@ -1,7 +1,13 @@
+import { VideogameListComponent } from './videogame-list.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path: '',
+    component: VideogameListComponent
+  }
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
