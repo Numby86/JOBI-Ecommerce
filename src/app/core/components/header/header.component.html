@@ -1,4 +1,19 @@
 <p>header works!</p>
+<div
+*ngIf="logged"
+class="logout"
+>
+    <img
+    (click)="addButton()"
+    class="logged" 
+    src="https://upload.wikimedia.org/wikipedia/commons/d/d3/User_Circle.png" 
+    alt="user logged">
+    <button
+    (click)="cerrarSesion()"
+    *ngIf="logOut"
+    class="button"
+    >LOGOUT</button>
+</div>
 
 <nav>
     <ul>
@@ -21,6 +36,13 @@
             <a [routerLink]="['toys']">
                 Juguetes
             </a>
+            <a [routerLink]="['login']">
+                <i class="fa-solid fa-user"></i>
+            </a>
+            <a [routerLink]="['register']">
+                <i class="fa-solid fa-users"></i>
+            </a>
+            <a [routerLink]="['cart']"><i class="fa-solid fa-cart-shopping"></i></a>
         </li>
     </ul>
 </nav>
