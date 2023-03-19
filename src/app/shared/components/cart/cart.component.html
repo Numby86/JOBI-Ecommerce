@@ -1,0 +1,26 @@
+<div
+    class="component"
+>
+    <h2>HOLA</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>VIDEOJUEGO</th>
+                <th>CANTIDAD</th>
+                <th>PRECIO</th>
+            </tr>
+        </thead>
+        <tbody>
+            <ng-container *ngFor="let videogame of videogames">
+                <tr>
+                    <td>{{ videogame.name }}</td>
+                    <td>{{ videogame.stock }}</td>
+                    <td>{{ videogame.price }}€</td>
+                </tr>
+            </ng-container>
+        </tbody>
+    </table>
+
+    <p>TOTAL {{ total }}€</p>
+    <button >Comprar</button>
+</div>
