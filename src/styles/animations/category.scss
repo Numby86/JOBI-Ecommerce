@@ -1,0 +1,14 @@
+@keyframes myRotation {
+    70% {
+      box-shadow: 0px 0px 10px 50px rgba(95, 158, 160, 0.512);
+    }
+  
+    90% {
+      box-shadow: 0px 0px 10px 50px rgba(241, 57, 57, 0.04);
+    }
+  
+    100% {
+      opacity: 0.5;
+      transform: rotate(360deg);
+    }
+  }
