@@ -49,11 +49,21 @@
   justify-content: baseline;
   padding: 1rem;
   .productCart {
+    background-color: whitesmoke;
+    border: 1px solid cadetblue;
+    margin-top: 5px;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    height: 65px;
+    padding: 5px 10px;
     &__body{
       flex-basis: 50%;
+      &-image{
+        width: 60px;
+        height: 60px;
+        margin-right: 8px;
+      }
       &-info{
         display: flex;
         gap: 1rem;
@@ -98,6 +108,9 @@
     cursor: pointer;
     padding: 1rem;
   }
+}
+.cart-btn{
+  width: 15%;
 }
 .fa-trash{
   color: red;

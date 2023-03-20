@@ -1,3 +1,4 @@
+import { CartService } from './../../core/services/cart/cart.service';
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { BooksService } from 'src/app/core/services/books/books.service';
@@ -14,7 +15,8 @@ export class BookDetailComponent {
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private booksService: BooksService
+    private booksService: BooksService,
+    private cartService: CartService
   ) {
     this.activatedRoute.params.subscribe((params) => {
       const bookId = params['id'];

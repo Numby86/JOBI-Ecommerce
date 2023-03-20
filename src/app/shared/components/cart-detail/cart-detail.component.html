@@ -5,6 +5,7 @@
     *ngFor="let product of myCart$ | async"
     class="productCart"
     >
+    <img [src]="product.image" alt="imagen producto" class="productCart__body-image">
         <div class="productCart__body">
             <p>{{ product.name }}</p>
             <div class="productCart__body-info">
@@ -21,7 +22,9 @@
             <i 
             (click)="updateUnits('minus', product._id)"
             class="fa-solid fa-minus"></i>
-            <span class="spanNumber">{{ product.stock }}</span>
+            <span
+            class="spanNumber"
+            >{{ product.stock }}</span>
             <i 
             (click)="updateUnits('add', product._id)"
             class="fa-solid fa-plus"></i>
@@ -35,6 +38,6 @@
         <p class="cartTotal__total">Total : {{ totalCart() }} €</p>
     </div>
     <button 
-    [routerLink]="['cart-detail']"
-    class="cart-btn">Ir a mi cesta</button>
+    [routerLink]="['cart']"
+    class="cart-btn">Comprar</button>
 </div>
