@@ -1,3 +1,4 @@
+import { NgxPaginationModule } from 'ngx-pagination';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SharedModule } from '../../shared/shared.module';
@@ -17,7 +18,8 @@ import { VideogameListComponent } from './videogame-list.component';
     VideogameListRoutingModule,
     RouterModule,
     SharedModule,
-    FormsModule
+    FormsModule,
+    NgxPaginationModule
   ]
 })
 export class VideogameListModule { }

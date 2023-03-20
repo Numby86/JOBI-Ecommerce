@@ -1,0 +1,24 @@
+<div
+class="card-detail"
+*ngIf="toy">
+<div>
+    <img [src]="toy.image" 
+    class="card-detail__img">
+</div>
+
+
+<div *ngIf="toy; else NotFound"
+    class="card-detail__content"
+>
+    <p class="card-detail__content__name">{{ toy.name }}</p>
+    <p class="card-detail__content__brand">{{ toy.brand }}</p>
+    <p class="card-detail__content__price">{{ toy.price }}€</p>
+    <p class="card-detail__content__decades">{{ toy.decades }}</p>
+    <p class="card-detail__content__description">{{ toy.description }}</p>
+    <p class="card-detail__content__age">{{ toy.age }}</p>
+</div>
+<ng-template #NotFound>
+    <p>No hay un juguete con ese Id</p>
+</ng-template>
+
+</div>

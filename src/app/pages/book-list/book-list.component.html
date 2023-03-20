@@ -1,7 +1,21 @@
 <div *ngIf="books" class="cards" >
     <app-book
-        *ngFor="let bookEl of books"
+        *ngFor="let bookEl of books | paginate: { id: 'foo',
+        itemsPerPage: 15,
+        currentPage: page,
+        totalItems: 50 }"
         [book]="bookEl"
     >
     </app-book>
+</div>
+<div
+class="pagination"
+>
+    <pagination-controls 
+    (pageChange)="page = $event" 
+    id="foo"
+    previousLabel="Previous"
+    nextLabel="Next"
+    >
+    </pagination-controls>
 </div>

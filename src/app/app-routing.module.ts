@@ -2,6 +2,7 @@ import { CartComponent } from './shared/components/cart/cart.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+
 const routes: Routes = [
   {
     path: '',
@@ -36,6 +37,14 @@ const routes: Routes = [
     path: 'garmentDetail/:id',
     loadChildren: () => import('./pages/garment-detail/garment-detail.module').then(m=> m.GarmentDetailModule)
   },
+    {
+    path:'toys-list',
+    loadChildren: () => import('./pages/toys-list/toys-list.module').then(m=> m.ToysListModule)
+  },
+  {
+    path:'toysDetail/:id',
+    loadChildren: () => import('./pages/toys-detail/toys-detail.module').then(m=> m.ToysDetailModule)
+  },  
   {
     path: 'login',
     loadChildren: () => import('./pages/user/login/login.module').then(m => m.LoginModule)
