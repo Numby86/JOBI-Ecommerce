@@ -1,4 +1,4 @@
-import { IconUser } from './../../../core/services/user/iconUser.model';
+import { IconUser } from '../../../core/services/user/iconUser.model';
 import { Router } from '@angular/router';
 import { UserServiceService } from './../../../core/services/user/user-service.service';
 import { Component, OnInit } from '@angular/core';
