@@ -8,6 +8,7 @@ import { CategoryComponent } from './component-category/category.component';
 import { SaleComponent } from './component-sale/sale.component';
 import { NovedadesComponent } from './component-novedades/novedades.component';
 import { BestSellerComponent } from './component-best-seller/best-seller.component';
+import { SpanComponent } from './component-span/span.component';
 
 
 
@@ -20,6 +21,7 @@ import { BestSellerComponent } from './component-best-seller/best-seller.compone
     SaleComponent,
     NovedadesComponent,
     BestSellerComponent,
+    SpanComponent,
   ],
   imports: [
     CommonModule,
