@@ -1,6 +1,7 @@
+import { IconUser } from './../../../core/services/user/iconUser.model';
 import { Router } from '@angular/router';
 import { UserServiceService } from './../../../core/services/user/user-service.service';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {
   FormBuilder,
   FormGroup,
@@ -14,7 +15,10 @@ import { Register } from 'src/app/core/services/user/register.model';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss']
 })
-export class RegisterComponent {
+export class RegisterComponent implements OnInit {
+
+  public avatares: string[] = IconUser;
+  public selectedAvatar: string = "";
 
   public regForm?: FormGroup;
 
@@ -45,7 +49,14 @@ export class RegisterComponent {
         Validators.minLength(4),
         Validators.maxLength(12),
       ]),
+      avatar: new FormControl('')
     });
+  }
+  ngOnInit(): void {
+    this.regForm?.get('avatar')?.valueChanges.subscribe((value) => {
+      if (!value) { return; }
+      this.selectedAvatar = value;
+    })
   }
 
   public sendFormulario() {

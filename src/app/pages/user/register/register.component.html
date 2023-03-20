@@ -1,6 +1,15 @@
+
 <div
 class="form"
 >
+<p>CREAR CUENTA</p>
+    <div>
+      <img 
+      *ngIf="selectedAvatar"
+      class="imageAvatar"
+      [src]="selectedAvatar" 
+      alt="imagen avatar">
+    </div>
     <form
     *ngIf="regForm"
     (submit)="sendFormulario()"
@@ -45,6 +54,18 @@ class="form"
       && regForm.get('phone')?.dirty 
       && regForm.get('phone')?.errors?.['pattern']"
   >Solo se pueden usar numeros en este campo</p>
+        <select
+        class="form__content-avatar"
+        name="avatar" 
+        formControlName="avatar">
+            <option 
+            class="form__content-option"
+            default value="">Elige tu avatar</option>
+            <option
+            class="form__content-option"
+            *ngFor="let avatar of avatares"
+            [value]="avatar">{{ avatar }}</option>
+        </select>
         <input
         name="email"
         formControlName="email"
@@ -91,4 +112,5 @@ class="form"
         type="submit"
         class="button">ENVIAR</button>
     </form>
+
 </div>
