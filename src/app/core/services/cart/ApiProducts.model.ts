@@ -20,6 +20,12 @@ export interface Products {
     size?:        Size;
     color?:       string;
     platform?:    Platform;
+    decades?: string,
+    brand?: string,
+    subcategory?: string,
+    tags?: string[],
+    materials?: string[],
+    age?: string,
 }
 
 export enum Bookbinding {

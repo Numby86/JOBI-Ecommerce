@@ -3,7 +3,8 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ApiGarment } from './models/api-garment.models';
 
-const API_GARMENT_URL = "https://nodejs-proyectodb-h80kv99v0-numby86.vercel.app"
+//const API_GARMENT_URL = "https://nodejs-proyectodb-h80kv99v0-numby86.vercel.app"
+const API_GARMENT_URL = "https://project-jobi-api.vercel.app"
 
 @Injectable({
   providedIn: 'root'

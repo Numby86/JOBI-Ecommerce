@@ -3,7 +3,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-const API_PRODUCTS_URL = 'https://nodejs-proyectodb-fzekcq71e-numby86.vercel.app/products';
+const API_PRODUCTS_URL = 'https://project-jobi-api.vercel.app/products';
 
 
 @Injectable({
@@ -66,7 +66,7 @@ export class CartService {
     const total = this.myList.reduce(function(acc, product){
         return acc + (product.stock * product.price);
       }, 0);
-      return total;
+      return total.toFixed(2);
   }
 
   public totalNumProducts(){

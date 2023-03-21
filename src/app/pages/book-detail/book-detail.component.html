@@ -1,23 +1,23 @@
 <div class="card-detail"
-*ngIf="book;">
+*ngIf="product">
   
     <div>
-        <img class="card-detail__img" [src]="book.image">  
+        <img class="card-detail__img" [src]="product.image">  
     </div>
 
-    <div class="card-detail__content" *ngIf="book; else bookNotFound">
+    <div class="card-detail__content" *ngIf="product; else bookNotFound">
         
-        <p class="card-detail__content__name">{{ book.name }}</p>
-        <p class="card-detail__content__price">{{ book.price }}€</p>
-        <p class="card-detail__content__description">{{ book.description }}</p>
-        <p class="card-detail__content__type"> {{ book.type }}</p>
-        <p class="card-detail__content__author">{{ book.author }}</p>
-        <p class="card-detail__content__pages">Nº de páginas: {{ book.pages }}</p>
-        <p class="card-detail__content__editorial">Editorial: {{ book.editorial }}</p>
-        <p class="card-detail__content__languague">Idioma: {{ book.languague }}</p>
-        <p class="card-detail__content__bookbinding">Encuadernación: {{ book.bookbinding }}</p>
-        <p class="card-detail__content__year">Año de edición: {{ book.yearEdition }}</p>
-        <p class="card-detail__content__isbn">ISBN: {{ book.isbn }}</p>
+        <p class="card-detail__content__name">{{ product.name }}</p>
+        <p class="card-detail__content__price">{{ product.price }}€</p>
+        <p class="card-detail__content__description">{{ product.description }}</p>
+        <p class="card-detail__content__type"> {{ product.type }}</p>
+        <p class="card-detail__content__author">{{ product.author }}</p>
+        <p class="card-detail__content__pages">Nº de páginas: {{ product.pages }}</p>
+        <p class="card-detail__content__editorial">Editorial: {{ product.editorial }}</p>
+        <p class="card-detail__content__languague">Idioma: {{ product.languague }}</p>
+        <p class="card-detail__content__bookbinding">Encuadernación: {{ product.bookbinding }}</p>
+        <p class="card-detail__content__year">Año de edición: {{ product.yearEdition }}</p>
+        <p class="card-detail__content__isbn">ISBN: {{ product.isbn }}</p>
     </div>
 
 

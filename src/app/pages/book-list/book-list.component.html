@@ -1,13 +1,16 @@
-<div *ngIf="books" class="cards" >
-    <app-book
-        *ngFor="let bookEl of books | paginate: { id: 'foo',
-        itemsPerPage: 15,
-        currentPage: page,
-        totalItems: 50 }"
-        [book]="bookEl"
-    >
-    </app-book>
-</div>
+    <div 
+    class="cards" >
+        <app-product-list
+            *ngFor="let bookEl of products 
+            | paginate: { id: 'foo',
+            itemsPerPage: 15,
+            currentPage: page,
+            totalItems: 50 }"
+            [product]="bookEl"
+        >
+        </app-product-list>
+    </div>
+
 <div
 class="pagination"
 >
