@@ -1,0 +1,39 @@
+
+:root,
+ :root.light{
+    --bg-color: white;
+    --font-color-main: #222E3A;
+   
+ }
+
+ :root,
+ :root.dark{
+    --bg-color: #222E3A;
+    --font-color-main: white;
+   
+ }
+
+.button__container{
+   display: flex;
+   gap: 10px;
+   justify-content: right;
+   margin-right: 50px;
+   padding-top: 10px;
+   
+}
+
+ button{
+   background-color: #ffffff00;
+   border: none;
+   border-radius:75px;
+   box-shadow: 0 7px 10px rgba(0, 0, 0, 0.1);
+  
+ }
+ button:hover  {
+   background: #c0d1f3;
+   color: #fff;
+ }
+
+ .fa-sharp,fa-regular fa-moon{
+   font-size: 25px;
+ }
