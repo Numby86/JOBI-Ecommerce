@@ -1,5 +1,3 @@
-
-
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeRoutingModule } from './home-routing.module';
@@ -23,8 +21,8 @@ import { SpanComponent } from './component-span/span.component';
     SaleComponent,
     NovedadesComponent,
     BestSellerComponent,
-    ImageSliderComponent
-    SpanComponent,
+    ImageSliderComponent,
+    SpanComponent
 
   ],
   imports: [

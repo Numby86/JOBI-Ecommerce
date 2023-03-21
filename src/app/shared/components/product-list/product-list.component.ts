@@ -15,9 +15,9 @@ export class ProductListComponent {
 
   constructor(private router: Router) {}
 
-  public navigateToDetail() {
+  public navigateToDetail(id: string) {
     if(this.product) {
-      this.router.navigate(['detail', this.product._id])
+      this.router.navigate(['detail', id])
     }
   }
 
