@@ -1,7 +1,9 @@
 <div
+(click)="navigateToDetail()"
 *ngIf="product"
 class="card">
-    <img [src]="product.image" alt="image_book" class="card__img" routerLink="/detail/{{ product._id }}">
+    <img [src]="product.image" alt="image_book" class="card__img" 
+    >
     <div>
         <p class="card__name">{{ product.name }}</p>
         <p class="card__price">{{ product.price }} €</p>

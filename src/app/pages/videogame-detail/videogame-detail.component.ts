@@ -21,20 +21,19 @@ export class VideogameDetailComponent implements OnInit {
   public total: number = 0;
 
   constructor(
-    //private activatedRoute: ActivatedRoute,
-    //private videogamesService: VideogamesService,
-    //private productsService: ProductsService,
+    private activatedRoute: ActivatedRoute,
+    private videogamesService: VideogamesService,
+    private productsService: ProductsService,
     private router: Router,
     private cartService: CartService
   )  {
     
-    // this.activatedRoute.params.subscribe((params) => {
-    //   const videogameId = params['id'];
-    //   this.productsService.getVideogameDetail(videogameId).subscribe((productsService) => {
-    //     this.productsService = videogame;
-    //     console.log(videogame);
-    //   })
-    // });
+    this.activatedRoute.params.subscribe((params) => {
+      const videogameId = params['id'];
+      this.productsService.getProductsDetail(videogameId).subscribe((productsService) => {
+        this.product = productsService;
+      })
+    });
     
   }
 

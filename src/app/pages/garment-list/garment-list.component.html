@@ -5,6 +5,7 @@
         currentPage: page,
         totalItems: 40 }"
         [product]="garmentEl"
+        (onDetail)="getProductDetail(garmentEl._id)"
     >
     </app-product-list>
 </div>

@@ -11,18 +11,27 @@ export class ProductListComponent {
 
   @Input() public product?: Product;
 
-  // @Output() public onDetail: EventEmitter<void> = new EventEmitter<void>();
+  @Output() public onDetail: EventEmitter<void> = new EventEmitter<void>();
 
   constructor(private router: Router) {}
 
-  public navigateToDetail() {
-    if(this.product) {
-      this.router.navigate(['detail', this.product._id])
-    }
-  }
-
   // public navigateToDetail() {
-  //   this.onDetail.emit()
+  //   if(this.product?.category === 'libros') {
+  //     this.router.navigate(['detail', this.product._id])
+  //   }
+  //   else if(this.product?.category === 'videojuegos') {
+  //     this.router.navigate(['videogames', this.product._id])
+  //   }
+  //   else if(this.product?.category === 'juguetes') {
+  //     this.router.navigate(['toysDetail', this.product._id])
+  //   }
+  //   else {
+  //    this.router.navigate(['garmentDetail', this.product?._id])
+  //   }
   // }
+
+  public navigateToDetail() {
+    this.onDetail.emit()
+  }
 
 }

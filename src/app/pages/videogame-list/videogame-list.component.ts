@@ -32,7 +32,15 @@ export class VideogameListComponent implements OnInit {
       })
     })
     }
+
+    public getProductDetail(id: string) {
+      this.productsService.getProductsDetail(id).subscribe((videogameDetail) => {
+        this.router.navigate(['videogames', videogameDetail._id])
+      })
+    }
   }
+
+
 
   // public goToDetail(id: string){
     
