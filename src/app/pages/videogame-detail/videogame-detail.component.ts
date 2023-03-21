@@ -4,6 +4,8 @@ import { VideogamesService } from './../../core/services/videogames/videogames.s
 import { Videogames } from './../../core/services/videogames/Videogames.model';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Product } from 'src/app/core/services/products/models/product.models';
+import { ProductsService } from 'src/app/core/services/products/products.service';
 
 @Component({
   selector: 'app-videogame-detail',
@@ -12,25 +14,27 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class VideogameDetailComponent implements OnInit {
 
-  public videogame?: Videogames;
+  //public videogame?: Videogames;
+  public product?: Product;
   myCart$ = this.cartService.myCart$;
   public products: Products[] = [];
   public total: number = 0;
 
   constructor(
-    private activatedRoute: ActivatedRoute,
-    private videogamesService: VideogamesService,
+    //private activatedRoute: ActivatedRoute,
+    //private videogamesService: VideogamesService,
+    //private productsService: ProductsService,
     private router: Router,
     private cartService: CartService
   )  {
     
-    this.activatedRoute.params.subscribe((params) => {
-      const videogameId = params['id'];
-      this.videogamesService.getVideogameDetail(videogameId).subscribe((videogame) => {
-        this.videogame = videogame;
-        console.log(videogame);
-      })
-    });
+    // this.activatedRoute.params.subscribe((params) => {
+    //   const videogameId = params['id'];
+    //   this.productsService.getVideogameDetail(videogameId).subscribe((productsService) => {
+    //     this.productsService = videogame;
+    //     console.log(videogame);
+    //   })
+    // });
     
   }
 

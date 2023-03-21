@@ -1,18 +1,18 @@
 <div class="card-detail"
-*ngIf="garment;">
+*ngIf="product">
 
     <div>
-<img class="card-detail__img"[src]="garment.image">
+<img class="card-detail__img"[src]="product.image">
 </div>
 
-<div class="card-detail__content" *ngIf="garment; else garmentNotFound">
-    <p class="card-detail__content__name">{{ garment.name }}</p>
-    <p class="card-detail__content__price">{{ garment.price }}€</p>
-    <p class="card-detail__content__description">{{ garment.description }}</p>
-    <p class="card-detail__content__size">Talla: {{ garment.size }}</p>
+<div class="card-detail__content" *ngIf="product; else garmentNotFound">
+    <p class="card-detail__content__name">{{ product.name }}</p>
+    <p class="card-detail__content__price">{{ product.price }}€</p>
+    <p class="card-detail__content__description">{{ product.description }}</p>
+    <p class="card-detail__content__size">Talla: {{ product.size }}</p>
    
-    <p class="card-detail__content__color">Color: {{ garment.color }}</p>
-    <p class="card-detail__content__stock">En stock: {{ garment.stock }}</p>        
+    <p class="card-detail__content__color">Color: {{ product.color }}</p>
+    <p class="card-detail__content__stock">En stock: {{ product.stock }}</p>        
    
   
 </div>

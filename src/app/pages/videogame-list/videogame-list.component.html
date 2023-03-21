@@ -1,24 +1,13 @@
 <div class="cards">
-  <div
-    class="card"
-    *ngFor="let videogame of videogames | paginate: { id: 'foo',
+  <app-product-list
+    *ngFor="let videogameEl of products | paginate: { id: 'foo',
     itemsPerPage: 15,
     currentPage: page,
     totalItems: 60 }"
-    (click)="goToDetail(videogame._id)"
-  >
-   
-    <img
-      class="card__img"
-      [src]="videogame.image"
-      alt="imagen {{ videogame.name }}"
-    />
-
-        <p class="card__name">{{ videogame.name }}</p>
-     
-    <p class="card__price">{{ videogame.price }} €</p>
-  </div>
+    [product]="videogameEl">
+  </app-product-list>
 </div>
+
 <div
 class="pagination"
 >
