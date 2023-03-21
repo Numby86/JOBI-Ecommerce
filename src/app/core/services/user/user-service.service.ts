@@ -6,9 +6,11 @@ import { Register } from './register.model';
 import { HttpClient } from '@angular/common/http';
 import { LoadingService } from './../loading/loading.service';
 
-const API_URL_REGISTER = 'https://nodejs-proyectodb-mpl0haqpi-numby86.vercel.app/user/register';
+// const API_URL_REGISTER = 'https://nodejs-proyectodb-mpl0haqpi-numby86.vercel.app/user/register';
+const API_URL_REGISTER = 'https://project-jobi-api.vercel.app/user/register';
 
-const API_URL_LOGIN_JWT = 'https://nodejs-proyectodb-mpl0haqpi-numby86.vercel.app/user/login-jwt';
+// const API_URL_LOGIN_JWT = 'https://nodejs-proyectodb-mpl0haqpi-numby86.vercel.app/user/login-jwt';
+const API_URL_LOGIN_JWT = 'https://project-jobi-api.vercel.app/user/login-jwt';
 
 const TOKEN_KEY = 'user-token';
 

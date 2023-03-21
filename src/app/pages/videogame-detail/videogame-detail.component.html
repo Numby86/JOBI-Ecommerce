@@ -1,23 +1,31 @@
 <div class="card-detail"
-    *ngIf="videogame"
+    *ngIf="product"
 >
     <div>
         <img class="card-detail__img"
-            [src]="videogame.image" 
-            alt="imagen {{ videogame.name }}"
+            [src]="product.image" 
+            alt="imagen {{ product.name }}"
         >
         </div>
         <div class="card-detail__content">
-            <p class="card-detail__content__name">{{ videogame.name }}</p>
-            <p class="card-detail__content__price">{{ videogame.price }}€</p>
-        <p class="card-detail__content__description">{{ videogame.description }}</p>
-        <p class="card-detail__content__plataforma">Plataforma: {{ videogame.plataforma }}</p>
-        <p class="card-detail__content__category">Categoría: {{ videogame.category }}</p>
-        
-        <p class="card-detail__content__stock">En stock: {{ videogame.stock }}</p>
-    </div>
+            <p class="card-detail__content__name">{{ product.name }}</p>
+            <p class="card-detail__content__price">{{ product.price }}€</p>
+        <p class="card-detail__content__description">{{ product.description }}</p>
+        <p class="card-detail__content__plataforma">Plataforma: {{ product.platform }}</p>
+        <p class="card-detail__content__category">Categoría: {{ product.category }}</p>
+            <p class="card-detail__content__stock">En stock: {{ product.stock }}</p>
+            <div
+            class="div_buttons"
+            >
+            <button
+            class="cart-btn"
+        >Add <i class="fa-solid fa-basket-shopping"></i></button>
+            <button
+                class="cart-btn"
+                (click)="backToList()"
+            >Volver</button>
+
+        </div>
+
+        </div>
 </div>
-<button
-class="btn"
-(click)="backToList()"
->GO LIST</button>

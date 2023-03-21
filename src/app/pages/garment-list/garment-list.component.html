@@ -1,12 +1,12 @@
-<div *ngIf="garments" class="cards" >
-    <app-garment
-        *ngFor="let garmentEl of garments | paginate: { id: 'foo',
+<div class="cards" >
+    <app-product-list
+        *ngFor="let garmentEl of products | paginate: { id: 'foo',
         itemsPerPage: 15,
         currentPage: page,
         totalItems: 40 }"
-        [garment]="garmentEl"
+        [product]="garmentEl"
     >
-    </app-garment>
+    </app-product-list>
 </div>
 <div
 class="pagination"

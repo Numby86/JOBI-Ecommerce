@@ -1,14 +1,14 @@
-import { CartService } from '../../../core/services/cart/cart.service';
+import { CartService } from './../../../core/services/cart/cart.service';
+import { Router } from '@angular/router';
 import { Products } from './../../../core/services/cart/ApiProducts.model';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-cart',
-  templateUrl: './cart.component.html',
-  styleUrls: ['./cart.component.scss']
+  selector: 'app-cart-detail',
+  templateUrl: './cart-detail.component.html',
+  styleUrls: ['./cart-detail.component.scss']
 })
-export class CartComponent implements OnInit {
+export class CartDetailComponent implements OnInit{
 
   myCart$ = this.cartService.myCart$;
   public products: Products[] = [];
