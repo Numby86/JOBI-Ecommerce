@@ -8,6 +8,13 @@
     font-size: 20px;
     font-weight: normal;
     letter-spacing: 1px;
+    
+    &__text{
+        padding-bottom: 5px;
+        padding-top: 25px;
+        display: grid;
+        gap: 5px;
+    }
 
     &__img{
         width: 40px;
@@ -20,4 +27,13 @@
     gap: 30px;
     justify-content: center;
 }
+
+.footer__pago{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: right;
+    gap: 15px;
+    margin-right: 50px;
+}
+
 

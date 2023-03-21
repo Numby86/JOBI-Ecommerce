@@ -1,3 +1,4 @@
+import { CartService } from './../../services/cart/cart.service';
 import { UserServiceService } from './../../services/user/user-service.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
@@ -11,10 +12,12 @@ export class HeaderComponent implements OnInit {
 
   public logged: boolean = false;
   public logOut: boolean = false;
+  public viewCart: boolean = false;
 
   constructor(
     private router: Router,
-    private userService: UserServiceService
+    private userService: UserServiceService,
+    private cartService: CartService
   ){}
 
   public ngOnInit(): void {
@@ -34,4 +37,12 @@ export class HeaderComponent implements OnInit {
     this.userService.logoutUser();
   }
 
+  public onToggleCart(){
+    this.viewCart = !this.viewCart;
+  }
+
+  public totalNumProducts(){
+    const totalProducts = this.cartService.totalNumProducts();
+    return totalProducts;
+  }
 }

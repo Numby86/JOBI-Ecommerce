@@ -3,7 +3,9 @@ import { HttpClient } from '@angular/common/http';
 import { ApiToysInterface } from './models/api-toys.models';
 import { Observable } from 'rxjs';
 
-const API_TOYS_URL = "https://nodejs-proyectodb-h80kv99v0-numby86.vercel.app"
+//const API_TOYS_URL = "https://nodejs-proyectodb-h80kv99v0-numby86.vercel.app"
+const API_TOYS_URL = "https://project-jobi-api.vercel.app"
+
 
 @Injectable({
   providedIn: 'root'

@@ -1,3 +1,5 @@
+import { RouterModule } from '@angular/router';
+import { NgxPaginationModule } from 'ngx-pagination';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PaginationPipe } from './pipes/pagination/pagination.pipe';
@@ -8,6 +10,10 @@ import { ProductListComponent } from './components/product-list/product-list.com
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import { CartComponent } from './components/cart/cart.component';
 import { ImageSliderComponent } from './components/image-slider/image-slider.component';
+import { ProductsComponent } from './components/products/products.component';
+import { MainComponent } from './components/main/main.component';
+import { CartDetailComponent } from './components/cart-detail/cart-detail.component';
+
 
 
 
@@ -19,15 +25,23 @@ import { ImageSliderComponent } from './components/image-slider/image-slider.com
     FilterPipe,
     ProductListComponent,
     ProductDetailComponent,
-    CartComponent
+    CartComponent,
+    ProductsComponent,
+    MainComponent,
+    CartDetailComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    NgxPaginationModule,
+    RouterModule
   ],
   exports: [
     CartComponent,
+    CartDetailComponent,
     ProductListComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    MainComponent,
+    ProductsComponent
   ]
 })
 export class SharedModule { }

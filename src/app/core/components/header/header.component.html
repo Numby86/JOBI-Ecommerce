@@ -35,11 +35,27 @@ class="logout"
          <a [routerLink]="['register']">
                 <i class="fa-solid fa-users"></i>
          </a>
-         <a [routerLink]="['cart']">
-              <i class="fa-solid fa-cart-shopping"></i>
-         </a>
+         <div
+         (click)="onToggleCart()"
+         class="cart"
+         >
+          <div
+          class="cart__items">
+            <p
+            class="cart__items-num"
+            >{{ totalNumProducts() }}</p>
+          </div>
+            <i class="fa-solid fa-cart-shopping"></i>
+         </div>
       </li>
 
     </ul>
+     <a class="header__nav_a" [routerLink]="['main']">Productos</a>
   </nav>
+  <div
+  class="list__cart"
+  [ngClass]="{show:viewCart}"
+  >
+  <app-cart></app-cart>
+  </div>
 </div>

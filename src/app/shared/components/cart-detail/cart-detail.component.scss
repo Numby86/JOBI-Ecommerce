@@ -1,0 +1,121 @@
+.cart{
+    padding: 1rem;
+    position: relative;
+    &__items{
+      position: relative;
+      left: 8.5px;
+      top: -0.8rem;
+      border: 1px solid cadetblue;
+      border-radius: 50%;
+      background-color: cadetblue;
+      height: 20px;
+      width: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &-num{
+        font-size: 0.8rem;
+        text-align: center;
+        color: #FFF;
+      }
+    }
+  }
+
+  .list__cart{
+    display: none;
+  }
+  .show{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 1;
+    position: absolute;
+    background-color: white;
+    border-radius: 0.5rem;
+    border: 1px solid cadetblue;
+    right: 0px;
+    top: 83px;
+    min-width: 40%;
+    app-cart{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+
+.product__wrapper{
+  display: flex;
+  flex-direction: column;
+  justify-content: baseline;
+  padding: 1rem;
+  .productCart {
+    background-color: whitesmoke;
+    border: 1px solid cadetblue;
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 65px;
+    padding: 5px 10px;
+    &__body{
+      flex-basis: 50%;
+      &-image{
+        width: 60px;
+        height: 60px;
+        margin-right: 8px;
+      }
+      &-info{
+        display: flex;
+        gap: 1rem;
+      }
+    }
+    &__total{
+      flex-basis: 20%;
+    }
+    &__buttons{
+      flex-basis: 30%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      &-operators{
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        span {
+          border: solid 1px black;
+          border-radius: 0.5rem;
+          padding: 0.5rem;
+        }
+      }
+    }
+  }
+  .cartTotal{
+    padding: 1rem;
+    &__total{
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+  }
+  .cart-btn{
+    width: 30%;
+    align-self: center;
+    border: none;
+    border-radius: 0.25rem;
+    margin: 0.75rem 0;
+    background-color: cadetblue;
+    color: #FFF;
+    cursor: pointer;
+    padding: 1rem;
+  }
+}
+.cart-btn{
+  width: 15%;
+}
+.fa-trash{
+  color: red;
+}
+.spanNumber{
+  background-color: cadetblue;
+  color: white;
+}

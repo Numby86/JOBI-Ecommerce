@@ -1,6 +1,6 @@
+import { CartService } from '../../../core/services/cart/cart.service';
+import { Products } from './../../../core/services/cart/ApiProducts.model';
 import { Component, OnInit } from '@angular/core';
-import { VideogamesService } from '../../../core/services/videogames/videogames.service';
-import { Videogames } from '../../../core/services/videogames/Videogames.model';
 import { Router } from '@angular/router';
 
 @Component({
@@ -10,22 +10,53 @@ import { Router } from '@angular/router';
 })
 export class CartComponent implements OnInit {
 
-  public videogames: Videogames[] = [];
+  myCart$ = this.cartService.myCart$;
+  public products: Products[] = [];
   public total: number = 0;
 
   constructor(
     private router: Router,
-    private videogamesService: VideogamesService
+    private cartService: CartService,
   ){}
 
   public ngOnInit(): void {
-    this.videogamesService.getVideogames().subscribe((videogamesApi) => {
-      this.videogames = videogamesApi;
+
+    this.cartService.getApiProducts().subscribe((productsApi) => {
+      this.products = productsApi;
     })
 
-    this.videogames.forEach((videogame) => {
-      this.total += videogame.stock * videogame.price;
-    })
   }
 
+  public totalProduct(price: number, units: number){
+    return price * units;
+  }
+
+  public deleteProduct(id: string){
+    this.cartService.deleteProduct(id);
+  }
+
+  public updateUnits(operation: string, id: string){
+    const product = this.cartService.findProductById(id);
+    if (product) {
+      if (operation === 'minus' && product.stock > 0) {
+        product.stock = product.stock - 1;
+      }
+      if (operation === 'add') {
+        product.stock = product.stock + 1;
+      }
+      if (product.stock === 0) {
+        this.deleteProduct(id);
+      }
+    }
+  }
+
+  public totalCart(){
+    const result = this.cartService.totalCart();
+    return result;
+  }
+
+  public totalNumProducts(){
+    const totalProducts = this.cartService.totalNumProducts();
+    return totalProducts;
+  }
 }

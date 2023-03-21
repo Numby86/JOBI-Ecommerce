@@ -1,0 +1,36 @@
+<div class="cards">
+    <div
+      class="card"
+      *ngFor="let product of products | paginate: { id: 'foo',
+      itemsPerPage: 15,
+      currentPage: page,
+      totalItems: 210 }"
+    >
+     
+      <img
+        class="card__img"
+        [src]="product.image"
+        alt="imagen {{ product.name }}"
+      />
+  
+          <p class="card__name">{{ product.name }}</p>
+       
+      <p class="card__price">{{ product.price }} €</p>
+      <button 
+      class="add"
+      (click)="addToCart(product)"
+      >Añadir</button>
+    </div>
+  </div>
+  <div
+  class="pagination"
+  >
+    <pagination-controls 
+    (pageChange)="page = $event" 
+    id="foo"
+    previousLabel="Previous"
+    nextLabel="Next"
+    >
+    </pagination-controls>
+  </div>
+  

@@ -1,0 +1,43 @@
+<div
+    class="product__wrapper"
+>
+    <article
+    *ngFor="let product of myCart$ | async"
+    class="productCart"
+    >
+    <img [src]="product.image" alt="imagen producto" class="productCart__body-image">
+        <div class="productCart__body">
+            <p>{{ product.name }}</p>
+            <div class="productCart__body-info">
+                <p>{{ product.price }} €</p>
+                <p>{{ product.stock }}</p>
+            </div>
+        </div>
+    
+    <div class="productCart__total">
+        <p>{{ totalProduct(product.price, product.stock) }}</p>
+    </div>
+    <div class="productCart__buttons">
+        <div class="productCart__buttons-operators">
+            <i 
+            (click)="updateUnits('minus', product._id)"
+            class="fa-solid fa-minus"></i>
+            <span
+            class="spanNumber"
+            >{{ product.stock }}</span>
+            <i 
+            (click)="updateUnits('add', product._id)"
+            class="fa-solid fa-plus"></i>
+        </div>
+        <i
+        (click)="deleteProduct(product._id)" 
+        class="fa-solid fa-trash"></i>
+    </div>
+    </article>
+    <div class="cartTotal">
+        <p class="cartTotal__total">Total : {{ totalCart() }} €</p>
+    </div>
+    <button 
+    [routerLink]="['cart']"
+    class="cart-btn">Comprar</button>
+</div>
