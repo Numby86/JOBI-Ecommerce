@@ -7,6 +7,7 @@ import { FilterPipe } from './pipes/filter/filter.pipe';
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import { CartComponent } from './components/cart/cart.component';
+import { ImageSliderComponent } from './components/image-slider/image-slider.component';
 
 
 

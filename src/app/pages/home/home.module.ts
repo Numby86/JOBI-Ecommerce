@@ -8,6 +8,7 @@ import { CategoryComponent } from './component-category/category.component';
 import { SaleComponent } from './component-sale/sale.component';
 import { NovedadesComponent } from './component-novedades/novedades.component';
 import { BestSellerComponent } from './component-best-seller/best-seller.component';
+import { ImageSliderComponent } from 'src/app/shared/components/image-slider/image-slider.component';
 
 
 
@@ -20,10 +21,11 @@ import { BestSellerComponent } from './component-best-seller/best-seller.compone
     SaleComponent,
     NovedadesComponent,
     BestSellerComponent,
+    ImageSliderComponent
   ],
   imports: [
     CommonModule,
-    HomeRoutingModule
+    HomeRoutingModule,
   ]
 })
 export class HomeModule { }

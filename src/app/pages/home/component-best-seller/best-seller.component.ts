@@ -1,3 +1,4 @@
+import { ImageSliderComponent } from './../../../shared/components/image-slider/image-slider.component';
 import { Component } from '@angular/core';
 
 @Component({
