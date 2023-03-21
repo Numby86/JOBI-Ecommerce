@@ -11,18 +11,13 @@ export class ProductListComponent {
 
   @Input() public product?: Product;
 
-  // @Output() public onDetail: EventEmitter<void> = new EventEmitter<void>();
+  @Output() public onDetail: EventEmitter<void> = new EventEmitter<void>();
 
   constructor(private router: Router) {}
 
-  public navigateToDetail(id: string) {
-    if(this.product) {
-      this.router.navigate(['detail', id])
-    }
-  }
 
-  // public navigateToDetail() {
-  //   this.onDetail.emit()
-  // }
+  public navigateToDetail() {
+    this.onDetail.emit()
+  }
 
 }

@@ -36,6 +36,10 @@ export class BookListComponent implements OnInit{
     })
   }
 
-
+public getProductDetail(id: string) {
+  this.productsService.getProductsDetail(id).subscribe((bookDetail) => {
+    this.router.navigate(['detail', bookDetail._id])
+  })
+}
 
 }

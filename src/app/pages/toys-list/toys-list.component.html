@@ -4,7 +4,9 @@
     itemsPerPage: 15,
     currentPage: page,
     totalItems: 60 }"
-    [product]="toyEl">
+    [product]="toyEl"
+    (onDetail)="getProductDetail(toyEl._id)"
+    >
   </app-product-list>
 </div>
 

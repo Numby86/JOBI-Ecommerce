@@ -34,4 +34,10 @@ export class GarmentListComponent implements OnInit {
     })
     
   }
+
+  public getProductDetail(id: string) {
+    this.productsService.getProductsDetail(id).subscribe((garmentDetail) => {
+      this.router.navigate(['garmentDetail', garmentDetail._id])
+    })
+  }
 }

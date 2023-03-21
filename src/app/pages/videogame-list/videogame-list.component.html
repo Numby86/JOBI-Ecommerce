@@ -4,7 +4,8 @@
     itemsPerPage: 15,
     currentPage: page,
     totalItems: 60 }"
-    [product]="videogameEl">
+    [product]="videogameEl"
+    (onDetail)="getProductDetail(videogameEl._id)">
   </app-product-list>
 </div>
 

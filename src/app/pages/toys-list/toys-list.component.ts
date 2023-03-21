@@ -33,4 +33,10 @@ public ngOnInit(): void {
     })
   })
   }
+
+  public getProductDetail(id: string) {
+    this.productsService.getProductsDetail(id).subscribe((toysDetail) => {
+      this.router.navigate(['toysDetail', toysDetail._id])
+    })
+  }
 }
