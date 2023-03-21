@@ -15,20 +15,6 @@ export class ProductListComponent {
 
   constructor(private router: Router) {}
 
-  // public navigateToDetail() {
-  //   if(this.product?.category === 'libros') {
-  //     this.router.navigate(['detail', this.product._id])
-  //   }
-  //   else if(this.product?.category === 'videojuegos') {
-  //     this.router.navigate(['videogames', this.product._id])
-  //   }
-  //   else if(this.product?.category === 'juguetes') {
-  //     this.router.navigate(['toysDetail', this.product._id])
-  //   }
-  //   else {
-  //    this.router.navigate(['garmentDetail', this.product?._id])
-  //   }
-  // }
 
   public navigateToDetail() {
     this.onDetail.emit()

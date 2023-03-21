@@ -8,6 +8,13 @@
     font-size: 20px;
     font-weight: normal;
     letter-spacing: 1px;
+    
+    &__text{
+        padding-bottom: 5px;
+        padding-top: 25px;
+        display: grid;
+        gap: 5px;
+    }
 
     &__img{
         width: 40px;
@@ -28,4 +35,5 @@
     gap: 15px;
     margin-right: 50px;
 }
+
 
