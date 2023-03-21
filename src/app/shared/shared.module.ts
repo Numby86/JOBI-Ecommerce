@@ -1,3 +1,4 @@
+import { SpanComponent } from './../pages/home/component-span/span.component';
 import { RouterModule } from '@angular/router';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { NgModule } from '@angular/core';
