@@ -26,4 +26,8 @@ export class BookDetailComponent {
     });
   }
 
+  public addToCart(product: Product){
+    return this.cartService.addProduct(product);
+  }
+
 }

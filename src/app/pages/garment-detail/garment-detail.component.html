@@ -12,9 +12,11 @@
     <p class="card-detail__content__size">Talla: {{ product.size }}</p>
    
     <p class="card-detail__content__color">Color: {{ product.color }}</p>
-    <p class="card-detail__content__stock">En stock: {{ product.stock }}</p>        
-   
-  
+    <p class="card-detail__content__stock">En stock: {{ product.stock }}</p>
+    <button 
+    class="add"
+    (click)="addToCart(product)"
+    >Anadir</button>  
 </div>
 
 

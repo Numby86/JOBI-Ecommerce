@@ -18,6 +18,10 @@
         <p class="card-detail__content__bookbinding">Encuadernación: {{ product.bookbinding }}</p>
         <p class="card-detail__content__year">Año de edición: {{ product.yearEdition }}</p>
         <p class="card-detail__content__isbn">ISBN: {{ product.isbn }}</p>
+        <button 
+        class="add"
+        (click)="addToCart(product)"
+        >Anadir</button>
     </div>
 
 

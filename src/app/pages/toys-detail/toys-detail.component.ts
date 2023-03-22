@@ -1,3 +1,4 @@
+import { CartService } from './../../core/services/cart/cart.service';
 import { ActivatedRoute } from '@angular/router';
 import { Component } from '@angular/core';
 import { Product } from 'src/app/core/services/products/models/product.models';
@@ -15,7 +16,10 @@ export class ToysDetailComponent {
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private productsService: ProductsService
+    private toysService: ToysService,
+    private productsService: ProductsService,
+    private cartService: CartService
+
   ) {
     this.activatedRoute.params.subscribe((params) => {
       const toyId = params['id'];
@@ -23,5 +27,9 @@ export class ToysDetailComponent {
         this.product = toy;
       });
     });
+  }
+
+  public addToCart(product: Product){
+    return this.cartService.addProduct(product);
   }
 }

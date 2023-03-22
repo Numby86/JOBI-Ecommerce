@@ -12,12 +12,12 @@ import { ProductsService } from 'src/app/core/services/products/products.service
   templateUrl: './videogame-detail.component.html',
   styleUrls: ['./videogame-detail.component.scss']
 })
-export class VideogameDetailComponent implements OnInit {
+export class VideogameDetailComponent {
 
   //public videogame?: Videogames;
   public product?: Product;
   myCart$ = this.cartService.myCart$;
-  public products: Products[] = [];
+  public products: Product[] = [];
   public total: number = 0;
 
   constructor(
@@ -37,17 +37,11 @@ export class VideogameDetailComponent implements OnInit {
     
   }
 
-  public ngOnInit(): void {
-    this.cartService.getApiProducts().subscribe((productsApi) => {
-      this.products = productsApi;
-    })
-  }
-
   public backToList(){
     this.router.navigate(['videogames'])
   }
 
-  public addToCart(product: Products){
+  public addToCart(product: Product){
     return this.cartService.addProduct(product);
   }
 

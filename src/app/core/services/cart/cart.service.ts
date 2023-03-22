@@ -1,7 +1,9 @@
+import { Product } from 'src/app/core/services/products/models/product.models';
 import { Products } from './ApiProducts.model';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { transformProduct } from '../products/products.helpers';
 
 const API_PRODUCTS_URL = 'https://project-jobi-api.vercel.app/products';
 
@@ -11,24 +13,25 @@ const API_PRODUCTS_URL = 'https://project-jobi-api.vercel.app/products';
 })
 export class CartService {
 
-  private myList: Products[] = [];
+  //private myList: Products[] = [];
+  private myList: Product[] = [];
 
-  private myCart = new BehaviorSubject<Products[]>([]);
+  private myCart = new BehaviorSubject<Product[]>([]);
   myCart$ = this.myCart.asObservable();
 
   constructor(
     private http: HttpClient
   ) { }
 
-  public getApiProducts(): Observable<Products[]>{
-    return this.http.get<Products[]>(API_PRODUCTS_URL);
+  public getApiProducts(): Observable<Product[]>{
+    return this.http.get<Product[]>(API_PRODUCTS_URL);
   }
 
-  public getApiProductsDetail(id: string): Observable<Products>{
-    return this.http.get<Products>(`${API_PRODUCTS_URL}/${id}`);
+  public getApiProductsDetail(id: string): Observable<Product>{
+    return this.http.get<Product>(`${API_PRODUCTS_URL}/${id}`);
   }
 
-  public addProduct(product: Products){
+  public addProduct(product: Product){
 
     if (this.myList.length === 0) {
       product.stock = 1;

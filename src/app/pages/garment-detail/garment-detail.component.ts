@@ -1,3 +1,4 @@
+import { Garment } from 'src/app/core/services/garments/models/garment.models';
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Product } from 'src/app/core/services/products/models/product.models';
@@ -25,5 +26,10 @@ export class GarmentDetailComponent {
         })
       })
     }
+    
+    public addToCart(product: Product){
+      return this.cartService.addProduct(product);
+    }
 
 }
+

@@ -1,5 +1,4 @@
 <div
-(click)="navigateToDetail()"
 *ngIf="product"
 class="card">
     <img [src]="product.image" alt="image_book" class="card__img" 
@@ -7,6 +6,14 @@ class="card">
     <div>
         <p class="card__name">{{ product.name }}</p>
         <p class="card__price">{{ product.price }} €</p>
+        <button 
+        class="add"
+        (click)="addToCart(product)"
+        >Anadir</button>
+        <button 
+        class="add"
+        (click)="navigateToDetail()"
+        >+ info</button>
     </div>
    
 </div>
