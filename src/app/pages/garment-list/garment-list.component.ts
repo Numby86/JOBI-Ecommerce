@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { GarmentsService } from 'src/app/core/services/garments/garments.service';
-import { Garment } from 'src/app/core/services/garments/models/garment.models';
 import { Product } from 'src/app/core/services/products/models/product.models';
 import { ProductsService } from 'src/app/core/services/products/products.service';
 
@@ -13,8 +11,6 @@ import { ProductsService } from 'src/app/core/services/products/products.service
 export class GarmentListComponent implements OnInit {
 
   page: number = 1;
-  // public garment?: Garment;
-  // public garments: Garment[] = [];
   public product?: Product ;
   public products: Product[] = [];
   
@@ -22,7 +18,6 @@ export class GarmentListComponent implements OnInit {
     private router :Router,
     private productsService: ProductsService,
     private activatedRoute: ActivatedRoute
-    //private garmentsService: GarmentsService
   ){}
 
   public ngOnInit(): void {
