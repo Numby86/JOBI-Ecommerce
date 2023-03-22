@@ -1,5 +1,3 @@
-import { VideogamesService } from './../../core/services/videogames/videogames.service';
-import { Videogames } from './../../core/services/videogames/Videogames.model';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { Product } from 'src/app/core/services/products/models/product.models';
@@ -15,11 +13,9 @@ export class VideogameListComponent implements OnInit {
   page: number = 1;
   public product?: Product;
   public products: Product[] = [];
-  //public videogames: Videogames[] = [];
   
   constructor(
     private router: Router,
-    //private videogamesService: VideogamesService
     private productsService: ProductsService,
     private activatedRoute: ActivatedRoute
   ){}
