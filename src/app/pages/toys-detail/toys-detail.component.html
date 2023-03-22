@@ -16,6 +16,10 @@ class="card-detail"
     <p class="card-detail__content__decades">{{ product.decades }}</p>
     <p class="card-detail__content__description">{{ product.description }}</p>
     <p class="card-detail__content__age">{{ product.age }}</p>
+    <button 
+    class="add"
+    (click)="addToCart(product)"
+    >Anadir</button>
 </div>
 <ng-template #NotFound>
     <p>No hay un juguete con ese Id</p>

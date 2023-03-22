@@ -1,3 +1,4 @@
+import { Product } from 'src/app/core/services/products/models/product.models';
 import { CartService } from '../../../core/services/cart/cart.service';
 import { Products } from './../../../core/services/cart/ApiProducts.model';
 import { Component, OnInit } from '@angular/core';
@@ -11,7 +12,7 @@ import { Router } from '@angular/router';
 export class CartComponent implements OnInit {
 
   myCart$ = this.cartService.myCart$;
-  public products: Products[] = [];
+  public products: Product[] = [];
   public total: number = 0;
 
   constructor(

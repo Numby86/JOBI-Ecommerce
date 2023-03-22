@@ -8,6 +8,10 @@
     color: #FFF;
     cursor: pointer;
     padding: 1rem;
+    .fa-basket-shopping{
+      color: #FFF;
+      font-size: 20px;
+    }
   }
 
   .div_buttons{
@@ -17,4 +21,18 @@
     justify-content: start;
     gap: 35px;
     margin-top: 25px;
+}
+.fa-trash{
+  color: red;
+  font-size: 20px;
+}
+.spanNumber{
+  background-color: cadetblue;
+  color: white;
+}
+.fa-minus{
+  font-size: 20px;
+}
+.fa-plus{
+  font-size: 20px;
 }

@@ -1,3 +1,4 @@
+import { Product } from 'src/app/core/services/products/models/product.models';
 import { CartService } from './../../../core/services/cart/cart.service';
 import { Router } from '@angular/router';
 import { Products } from './../../../core/services/cart/ApiProducts.model';
@@ -10,7 +11,7 @@ import { Component } from '@angular/core';
 })
 export class ProductsComponent {
 
-  public products: Products[] = [];
+  public products: Product[] = [];
   public viewCart: boolean = false;
   page: number = 1;
   public total: number = 0;
@@ -32,7 +33,7 @@ export class ProductsComponent {
     this.viewCart = !this.viewCart;
   }
 
-  public addToCart(product: Products){
+  public addToCart(product: Product){
     return this.cartService.addProduct(product);
   }
 
