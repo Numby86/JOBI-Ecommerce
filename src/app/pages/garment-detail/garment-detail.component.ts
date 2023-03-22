@@ -1,6 +1,6 @@
 import { Garment } from 'src/app/core/services/garments/models/garment.models';
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Product } from 'src/app/core/services/products/models/product.models';
 import { ProductsService } from 'src/app/core/services/products/products.service';
 import { CartService } from 'src/app/core/services/cart/cart.service';
@@ -17,7 +17,8 @@ export class GarmentDetailComponent {
     constructor (
       private activatedRoute: ActivatedRoute,
       private productsService: ProductsService,
-      private cartService: CartService
+      private cartService: CartService,
+      private router: Router
     ){
       this.activatedRoute.params.subscribe((params) => {
         const garmentId = params['id'];
@@ -27,6 +28,10 @@ export class GarmentDetailComponent {
       })
     }
     
+    public backToList(){
+      this.router.navigate(['garment-list'])
+    }
+
     public addToCart(product: Product){
       return this.cartService.addProduct(product);
     }
