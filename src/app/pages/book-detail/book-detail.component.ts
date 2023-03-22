@@ -1,8 +1,6 @@
 import { CartService } from './../../core/services/cart/cart.service';
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { BooksService } from 'src/app/core/services/books/books.service';
-import { Book } from 'src/app/core/services/books/models/book.models';
 import { Product } from 'src/app/core/services/products/models/product.models';
 import { ProductsService } from 'src/app/core/services/products/products.service';
 
@@ -13,12 +11,10 @@ import { ProductsService } from 'src/app/core/services/products/products.service
 })
 export class BookDetailComponent {
 
-  //public book?: Book;
   public product?: Product;
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    //private booksService: BooksService,
     private productsService: ProductsService,
     private cartService: CartService
   ) {

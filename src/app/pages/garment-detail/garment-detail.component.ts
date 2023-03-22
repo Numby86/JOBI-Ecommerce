@@ -1,9 +1,9 @@
-import { CartService } from './../../core/services/cart/cart.service';
 import { Garment } from 'src/app/core/services/garments/models/garment.models';
 import { Component } from '@angular/core';
-import { GarmentsService } from 'src/app/core/services/garments/garments.service';
 import { ActivatedRoute } from '@angular/router';
 import { Product } from 'src/app/core/services/products/models/product.models';
+import { ProductsService } from 'src/app/core/services/products/products.service';
+import { CartService } from 'src/app/core/services/cart/cart.service';
 
 @Component({
   selector: 'app-garment-detail',
@@ -12,15 +12,24 @@ import { Product } from 'src/app/core/services/products/models/product.models';
 })
 export class GarmentDetailComponent {
 
-    //public garment?: Garment;
     public product?: Product;
 
     constructor (
+      private activatedRoute: ActivatedRoute,
+      private productsService: ProductsService,
       private cartService: CartService
-    ){ }
-
+    ){
+      this.activatedRoute.params.subscribe((params) => {
+        const garmentId = params['id'];
+        this.productsService.getProductsDetail(garmentId).subscribe((garment) => {
+          this.product = garment
+        })
+      })
+    }
+    
     public addToCart(product: Product){
       return this.cartService.addProduct(product);
     }
 
-    }
+}
+

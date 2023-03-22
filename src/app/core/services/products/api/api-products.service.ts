@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Product } from '../models/product.models';
 import { ApiProduct } from './models/api-product.models';
 
 const API_PRODUCT_URL = "https://project-jobi-api.vercel.app/products"
