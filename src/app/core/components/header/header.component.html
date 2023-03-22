@@ -30,10 +30,10 @@ class="logout"
         <a class="header__nav_a" [routerLink]="['videogames']"> Videojuegos </a>
         <a class="header__nav_a" [routerLink]="['toys-list']"> Juguetes </a>
         <a [routerLink]="['login']">
-             <i class="fa-solid fa-user"></i>
+             <span class="fa-solid fa-user"></span>
          </a>
          <a [routerLink]="['register']">
-                <i class="fa-solid fa-users"></i>
+                <span class="fa-solid fa-users"></span>
          </a>
          <div
          (click)="onToggleCart()"
@@ -45,12 +45,11 @@ class="logout"
             class="cart__items-num"
             >{{ totalNumProducts() }}</p>
           </div>
-            <i class="fa-solid fa-cart-shopping"></i>
+            <span class="fa-solid fa-cart-shopping"></span>
          </div>
       </li>
 
     </ul>
-     <a class="header__nav_a" [routerLink]="['main']">Productos</a>
   </nav>
   <div
   class="list__cart"

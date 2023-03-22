@@ -18,17 +18,17 @@
     </div>
     <div class="productCart__buttons">
         <div class="productCart__buttons-operators">
-            <i 
+            <span 
             (click)="updateUnits('minus', product._id)"
-            class="fa-solid fa-minus"></i>
+            class="fa-solid fa-minus"></span>
             <span class="spanNumber">{{ product.stock }}</span>
-            <i 
+            <span 
             (click)="updateUnits('add', product._id)"
-            class="fa-solid fa-plus"></i>
+            class="fa-solid fa-plus"></span>
         </div>
-        <i
+        <span
         (click)="deleteProduct(product._id)" 
-        class="fa-solid fa-trash"></i>
+        class="fa-solid fa-trash"></span>
     </div>
     </article>
     <div class="cartTotal">

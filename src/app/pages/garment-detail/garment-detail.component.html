@@ -13,10 +13,18 @@
    
     <p class="card-detail__content__color">Color: {{ product.color }}</p>
     <p class="card-detail__content__stock">En stock: {{ product.stock }}</p>
+    <div
+    class="div-buttons"
+    >
     <button 
-    class="add"
+    class="cart-btn"
+    (click)="backToList()"
+    >Volver</button>
+    <button 
+    class="cart-btn"
     (click)="addToCart(product)"
-    >Anadir</button>  
+    >Añadir <span class="fa-sharp fa-solid fa-basket-shopping"></span></button>
+    </div>
 </div>
 
 

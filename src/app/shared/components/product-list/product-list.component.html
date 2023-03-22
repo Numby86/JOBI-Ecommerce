@@ -6,14 +6,15 @@ class="card">
     <div>
         <p class="card__name">{{ product.name }}</p>
         <p class="card__price">{{ product.price }} €</p>
-        <button 
-        class="add"
-        (click)="addToCart(product)"
-        >Anadir</button>
-        <button 
-        class="add"
-        (click)="navigateToDetail()"
-        >+ info</button>
+        <div class="div_buttons">
+            <button 
+            class="addButton"
+            (click)="navigateToDetail()"
+            >+ info</button>
+            <button 
+            class="addButton"
+            (click)="addToCart(product)"
+            >Añadir <span class="fa-sharp fa-solid fa-basket-shopping"></span></button>
+        </div>
     </div>
-   
 </div>

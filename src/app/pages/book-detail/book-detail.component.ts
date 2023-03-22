@@ -1,6 +1,6 @@
 import { CartService } from './../../core/services/cart/cart.service';
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Product } from 'src/app/core/services/products/models/product.models';
 import { ProductsService } from 'src/app/core/services/products/products.service';
 
@@ -16,7 +16,8 @@ export class BookDetailComponent {
   constructor(
     private activatedRoute: ActivatedRoute,
     private productsService: ProductsService,
-    private cartService: CartService
+    private cartService: CartService,
+    private router: Router
   ) {
     this.activatedRoute.params.subscribe((params) => {
       const bookId = params['id'];
@@ -28,6 +29,10 @@ export class BookDetailComponent {
 
   public addToCart(product: Product){
     return this.cartService.addProduct(product);
+  }
+
+  public backToList(){
+    this.router.navigate(['book-list'])
   }
 
 }

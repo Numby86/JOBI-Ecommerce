@@ -1,5 +1,4 @@
 import { CartDetailComponent } from './shared/components/cart-detail/cart-detail.component';
-import { MainComponent } from './shared/components/main/main.component';
 import { CartComponent } from './shared/components/cart/cart.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -62,10 +61,6 @@ const routes: Routes = [
   {
     path: 'cart-detail',
     component: CartDetailComponent
-  },
-  {
-    path: 'main',
-    component: MainComponent
   },
   {
     path: '*',

@@ -1,5 +1,14 @@
-.cart-btn{
+.div-buttons{
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  justify-content: start;
+  gap: 35px;
+  margin-top: 25px;
+  .cart-btn{
+    font-size: 16px;
     width: 30%;
+    font-weight: bold;
     align-self: center;
     border: none;
     border-radius: 0.25rem;
@@ -8,20 +17,19 @@
     color: #FFF;
     cursor: pointer;
     padding: 1rem;
-    .fa-basket-shopping{
-      color: #FFF;
+    &:hover{
+      background-color: whitesmoke;
+      color: cadetblue;
+    }
+    .fa-sharp, .fa-solid, .fa-basket-shopping{
       font-size: 20px;
+      &:hover{
+        color: cadetblue;
+      }
     }
   }
-
-  .div_buttons{
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    justify-content: start;
-    gap: 35px;
-    margin-top: 25px;
 }
+
 .fa-trash{
   color: red;
   font-size: 20px;
