@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 
 import { GarmentDetailRoutingModule } from './garment-detail-routing.module';
 import { GarmentDetailComponent } from './garment-detail.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { GarmentDetailComponent } from './garment-detail.component';
   imports: [
     CommonModule,
     GarmentDetailRoutingModule,
-    RouterModule
+    RouterModule,
+    SharedModule
   ]
 })
 export class GarmentDetailModule { }

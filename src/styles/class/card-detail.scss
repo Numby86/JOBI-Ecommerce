@@ -40,6 +40,9 @@
         font-size: 19px;
         margin: 0px;
     }
+    &__category {
+        display: none;
+    }
 
     &__type, &__author, &__pages, &__editorial, &__languague, &__bookbinding, &__year, &__isbn, &__size, &__color, &__stock {
         font-size: 17px;

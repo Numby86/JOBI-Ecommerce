@@ -1,35 +1,10 @@
 <div class="card-detail"
 *ngIf="product">
-
-    <div>
-<img class="card-detail__img"[src]="product.image">
-</div>
-
-<div class="card-detail__content" *ngIf="product; else garmentNotFound">
-    <p class="card-detail__content__name">{{ product.name }}</p>
-    <p class="card-detail__content__price">{{ product.price }}€</p>
-    <p class="card-detail__content__description">{{ product.description }}</p>
-    <p class="card-detail__content__size">Talla: {{ product.size }}</p>
-   
-    <p class="card-detail__content__color">Color: {{ product.color }}</p>
-    <p class="card-detail__content__stock">En stock: {{ product.stock }}</p>
-    <div
-    class="div-buttons"
-    >
-    <button 
-    class="cart-btn"
-    (click)="backToList()"
-    >Volver</button>
-    <button 
-    class="cart-btn"
-    (click)="addToCart(product)"
-    >Añadir <span class="fa-sharp fa-solid fa-basket-shopping"></span></button>
-    </div>
-</div>
-
-
-<ng-template #garmentNotFound>
-    <p>No hay un ropa con ese Id</p>
-</ng-template>
-
+    <app-product-detail
+    *ngIf="product"
+        [product]="product"
+        (onBack)="backToList()"
+        (onAdd)="addToCart(product)"
+        >
+        </app-product-detail>
 </div>

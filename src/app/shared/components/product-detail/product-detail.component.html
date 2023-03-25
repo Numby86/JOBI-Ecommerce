@@ -10,14 +10,27 @@
         <p class="card-detail__content__name">{{ product.name }}</p>
         <p class="card-detail__content__price">{{ product.price }}€</p>
         <p class="card-detail__content__description">{{ product.description }}</p>
-        <p class="card-detail__content__type"> {{ product.type }}</p>
-        <p class="card-detail__content__author">{{ product.author }}</p>
-        <p class="card-detail__content__pages">Nº de páginas: {{ product.pages }}</p>
-        <p class="card-detail__content__editorial">Editorial: {{ product.editorial }}</p>
-        <p class="card-detail__content__languague">Idioma: {{ product.languague }}</p>
-        <p class="card-detail__content__bookbinding">Encuadernación: {{ product.bookbinding }}</p>
-        <p class="card-detail__content__year">Año de edición: {{ product.yearEdition }}</p>
-        <p class="card-detail__content__isbn">ISBN: {{ product.isbn }}</p>
+
+        <ng-container *ngIf="product.category === 'libros'">
+            <p class="card-detail__content__type"> {{ product.type }}</p>
+            <p class="card-detail__content__author">{{ product.author }}</p>
+            <p class="card-detail__content__pages">Nº de páginas: {{ product.pages }}</p>
+            <p class="card-detail__content__editorial">Editorial: {{ product.editorial }}</p>
+            <p class="card-detail__content__languague">Idioma: {{ product.languague }}</p>
+            <p class="card-detail__content__bookbinding">Encuadernación: {{ product.bookbinding }}</p>
+            <p class="card-detail__content__year">Año de edición: {{ product.yearEdition }}</p>
+            <p class="card-detail__content__isbn">ISBN: {{ product.isbn }}</p>
+        </ng-container>
+
+        <p class="card-detail__content__category">categoria: {{ product.category }}</p>
+
+        <ng-container *ngIf="product.category === 'ropa'">
+             <p class="card-detail__content__size">Talla: {{ product.size }}</p>
+            <p class="card-detail__content__color">Color: {{ product.color }}</p>
+        </ng-container>
+
+
+
         <div
         class="div-buttons"
         >
