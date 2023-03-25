@@ -27,3 +27,9 @@ export interface Product {
 
 
 export type GarmentSize = 'S' | 'M' | 'L';
+
+export type Category =
+'libros'
+| 'juguetes'
+| 'ropa'
+| 'videojuegos';

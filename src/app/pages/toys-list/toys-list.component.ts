@@ -22,12 +22,12 @@ private activatedRoute: ActivatedRoute
 ){}
 
 public ngOnInit(): void {
-  this.activatedRoute.params.subscribe((params) => {
-    //const bookCategory = params['libros'];
-    this.productsService.getToysCategory().subscribe((toy) =>{
-      this.products = toy
+  this.activatedRoute.params.subscribe(() => {
+    const toyCategory = 'juguetes';
+    this.productsService.getProductsCategory(toyCategory).subscribe((toy) => {
+      this.products = toy;
     })
-  })
+  });
   }
 
   public getProductDetail(id: string) {

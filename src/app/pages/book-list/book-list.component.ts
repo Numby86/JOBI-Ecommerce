@@ -24,9 +24,9 @@ export class BookListComponent implements OnInit{
   }
 
   public ngOnInit(): void {
-    this.activatedRoute.params.subscribe((params) => {
-      //const bookCategory = params['libros'];
-      this.productsService.getProductsCategory().subscribe((book) => {
+    this.activatedRoute.params.subscribe(() => {
+      const bookCategory = 'libros';
+      this.productsService.getProductsCategory(bookCategory).subscribe((book) => {
         this.products = book;
       })
     });
