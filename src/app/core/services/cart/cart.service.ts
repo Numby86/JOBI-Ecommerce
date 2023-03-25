@@ -1,3 +1,5 @@
+import { Login } from './../user/login.model';
+import { Router } from '@angular/router';
 import { Product } from 'src/app/core/services/products/models/product.models';
 import { Products } from './ApiProducts.model';
 import { BehaviorSubject, Observable } from 'rxjs';
@@ -6,21 +8,21 @@ import { Injectable } from '@angular/core';
 import { transformProduct } from '../products/products.helpers';
 
 const API_PRODUCTS_URL = 'https://project-jobi-api.vercel.app/products';
-
+const API_ORDER_URL = "https://project-jobi-api.vercel.app/cart";
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
 
-  //private myList: Products[] = [];
   private myList: Product[] = [];
 
   private myCart = new BehaviorSubject<Product[]>([]);
   myCart$ = this.myCart.asObservable();
 
   constructor(
-    private http: HttpClient
+    private http: HttpClient,
+    private router: Router
   ) { }
 
   public getApiProducts(): Observable<Product[]>{
@@ -76,4 +78,9 @@ export class CartService {
     const totalProducts = this.myList.length;
     return totalProducts;
   }
+
+  public sendOrder(products: Product[]): Observable<Product[]>{
+    return this.http.post<Product[]>(`${API_ORDER_URL}`, products)
+  }
+
 }

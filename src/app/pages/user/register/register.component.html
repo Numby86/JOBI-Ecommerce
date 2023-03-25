@@ -63,8 +63,8 @@ class="form"
             default value="">Elige tu avatar</option>
             <option
             class="form__content-option"
-            *ngFor="let avatar of avatares"
-            [value]="avatar">{{ avatar }}</option>
+            *ngFor="let avatar of avatares; let i = index"
+            [value]="avatar">avatar- {{ i + 1 }}</option>
         </select>
         <input
         name="email"

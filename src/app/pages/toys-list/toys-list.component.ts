@@ -13,6 +13,7 @@ export class ToysListComponent implements OnInit{
   page: number = 1;
   public product?: Product;
   public products: Product[] = [];
+  public price: string = '';
 
 constructor(
 private router: Router,
@@ -33,5 +34,10 @@ public ngOnInit(): void {
     this.productsService.getProductsDetail(id).subscribe((toysDetail) => {
       this.router.navigate(['toysDetail', toysDetail._id])
     })
+  }
+
+  public sort(value: string){
+    this.price = value;
+    console.log(this.price);
   }
 }

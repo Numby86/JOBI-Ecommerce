@@ -14,6 +14,7 @@ export class CartComponent implements OnInit {
   myCart$ = this.cartService.myCart$;
   public products: Product[] = [];
   public total: number = 0;
+  public viewCart: boolean = false;
 
   constructor(
     private router: Router,
@@ -59,5 +60,9 @@ export class CartComponent implements OnInit {
   public totalNumProducts(){
     const totalProducts = this.cartService.totalNumProducts();
     return totalProducts;
+  }
+
+  public onToggleCart(){
+    this.viewCart = !this.viewCart;
   }
 }

@@ -1,4 +1,3 @@
-import { SpanComponent } from './../pages/home/component-span/span.component';
 import { RouterModule } from '@angular/router';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { NgModule } from '@angular/core';
@@ -10,8 +9,8 @@ import { FilterPipe } from './pipes/filter/filter.pipe';
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import { CartComponent } from './components/cart/cart.component';
-import { ImageSliderComponent } from './components/image-slider/image-slider.component';
 import { CartDetailComponent } from './components/cart-detail/cart-detail.component';
+import { SortComponent } from './components/sort/sort.component';
 
 
 
@@ -25,7 +24,8 @@ import { CartDetailComponent } from './components/cart-detail/cart-detail.compon
     ProductListComponent,
     ProductDetailComponent,
     CartComponent,
-    CartDetailComponent
+    CartDetailComponent,
+    SortComponent
   ],
   imports: [
     CommonModule,
@@ -37,6 +37,8 @@ import { CartDetailComponent } from './components/cart-detail/cart-detail.compon
     CartDetailComponent,
     ProductListComponent,
     ProductDetailComponent,
+    SortPipe,
+    SortComponent
   ]
 })
 export class SharedModule { }
