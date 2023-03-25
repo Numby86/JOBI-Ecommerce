@@ -22,13 +22,12 @@ export class GarmentListComponent implements OnInit {
   ){}
 
   public ngOnInit(): void {
-    this.activatedRoute.params.subscribe((params) => {
-      //const bookCategory = params['libros'];
-      this.productsService.getGarmentsCategory().subscribe((garment) =>{
-        this.products = garment
+    this.activatedRoute.params.subscribe(() => {
+      const garmentCategory = 'ropa';
+      this.productsService.getProductsCategory(garmentCategory).subscribe((garment) => {
+        this.products = garment;
       })
-    })
-    
+    });
   }
 
   public getProductDetail(id: string) {

@@ -26,11 +26,12 @@ export class VideogameListComponent implements OnInit {
   ){}
 
   public ngOnInit(): void {
-    this.activatedRoute.params.subscribe((params) => {
-      this.productsService.getVideogamesCategory().subscribe((videogame) =>{
+    this.activatedRoute.params.subscribe(() => {
+      const videdogameCategory = 'videojuegos';
+      this.productsService.getProductsCategory(videdogameCategory).subscribe((videogame) => {
         this.products = videogame;
       })
-    })
+    });
    }
 
     public getProductDetail(id: string) {

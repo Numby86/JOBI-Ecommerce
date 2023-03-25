@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { map, Observable, tap } from 'rxjs';
 import { LoadingService } from '../loading/loading.service';
 import { ApiProductsService } from './api/api-products.service';
-import { ApiProduct } from './api/models/api-product.models';
+import { ApiProduct, Category } from './api/models/api-product.models';
 import { Product } from './models/product.models';
 import { transformProduct } from './products.helpers';
 
@@ -37,48 +37,16 @@ export class ProductsService {
     )
     };
 
-    public getProductsCategory(): Observable<Product[]> {
+    public getProductsCategory(category: Category): Observable<Product[]> {
       this.loadingService.showLoading();
-      return this.apiProductsService.getApiCategoryBookProduct().pipe(
+      return this.apiProductsService.getApiCategoryProduct(category).pipe(
         map((apiProduct: ApiProduct[]) => {
-          return apiProduct.map((product) => 
-          transformProduct(product));
+          return apiProduct.map((product) =>
+            transformProduct(product));
         }),
         tap(() => this.loadingService.hideLoading())
       )
-      }
+    }
 
-      public getGarmentsCategory(): Observable<Product[]> {
-        this.loadingService.showLoading();
-        return this.apiProductsService.getApiCategoryGarmentProduct().pipe(
-          map((apiProduct: ApiProduct[]) => {
-            return apiProduct.map((product) => 
-            transformProduct(product));
-          }),
-          tap(() => this.loadingService.hideLoading())
-        )
-        }
-
-        public getToysCategory(): Observable<Product[]> {
-          this.loadingService.showLoading();
-          return this.apiProductsService.getApiCategoryToysProduct().pipe(
-            map((apiProduct: ApiProduct[]) => {
-              return apiProduct.map((product) => 
-              transformProduct(product));
-            }),
-            tap(() => this.loadingService.hideLoading())
-          )
-          }
-
-          public getVideogamesCategory(): Observable<Product[]> {
-            this.loadingService.showLoading();
-            return this.apiProductsService.getApiCategoryVideogamesProduct().pipe(
-              map((apiProduct: ApiProduct[]) => {
-                return apiProduct.map((product) => 
-                transformProduct(product));
-              }),
-              tap(() => this.loadingService.hideLoading())
-            )
-            }
-
+      
   }

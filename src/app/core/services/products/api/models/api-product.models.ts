@@ -30,3 +30,9 @@ export interface ApiProduct {
 
 
 export type GarmentSize = 'S' | 'M' | 'L';
+
+export type Category =
+'libros'
+| 'juguetes'
+| 'ropa'
+| 'videojuegos';
