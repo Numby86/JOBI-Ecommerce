@@ -29,16 +29,16 @@
             (click)="updateUnits('add', product._id)"
             class="fa-solid fa-plus"></i>
         </div>
-        <i
+        <span
         (click)="deleteProduct(product._id)" 
-        class="fa-solid fa-trash"></i>
+        class="fa-solid fa-trash"></span>
     </div>
+            
     </article>
     <div class="cartTotal">
         <p class="cartTotal__total">Total : {{ totalCart() }} €</p>
     </div>
-    <button 
-    [routerLink]="['cart']"
-    (click)="sendOrder(products)"
-    class="cart-btn">Comprar</button>
+    <button
+        (click)="sendOrder(myCart$)"
+        class="cart-btn">Comprar</button>
 </div>

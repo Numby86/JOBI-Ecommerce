@@ -1,8 +1,10 @@
+import { Order } from './../order/order.model';
+import { ProductAdd } from './Order.model';
 import { Login } from './../user/login.model';
 import { Router } from '@angular/router';
 import { Product } from 'src/app/core/services/products/models/product.models';
 import { Products } from './ApiProducts.model';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, Subscription } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { transformProduct } from '../products/products.helpers';
@@ -18,7 +20,7 @@ export class CartService {
   private myList: Product[] = [];
 
   private myCart = new BehaviorSubject<Product[]>([]);
-  myCart$ = this.myCart.asObservable();
+  public myCart$ = this.myCart.asObservable();
 
   constructor(
     private http: HttpClient,
@@ -79,8 +81,9 @@ export class CartService {
     return totalProducts;
   }
 
-  public sendOrder(products: Product[]): Observable<Product[]>{
-    return this.http.post<Product[]>(`${API_ORDER_URL}`, products)
+  public sendOrder(products: any): Observable<any>{
+    console.log('llego');
+    return this.http.post<any>(`${API_ORDER_URL}`, products)
   }
 
 }
