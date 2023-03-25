@@ -12,12 +12,25 @@
         <a class="header__nav_a" [routerLink]="['garment-list']"> Ropa </a>
         <a class="header__nav_a" [routerLink]="['videogames']"> Videojuegos </a>
         <a class="header__nav_a" [routerLink]="['toys-list']"> Juguetes </a>
-        <a [routerLink]="['login']">
-             <span class="fa-solid fa-user"></span>
-         </a>
-         <a [routerLink]="['register']">
-                <span class="fa-solid fa-users"></span>
-         </a>
+        
+         <ng-container *ngIf="!logged">
+          <a [routerLink]="['login']">
+            <span class="fa-solid fa-user"></span>
+        </a>
+          <a [routerLink]="['register']">
+            <span class="fa-solid fa-users"></span>
+     </a>
+         </ng-container>
+         
+         <div
+*ngIf="logged"
+class="logout"
+>
+    <button
+    (click)="cerrarSesion()"
+    class="addButton"
+    ><span class="fa-solid fa-power-off"></span> Logout</button>
+</div>
          <div
          (click)="onToggleCart()"
          class="cart"
@@ -30,15 +43,7 @@
           </div>
             <span class="fa-solid fa-cart-shopping"></span>
          </div>
-         <div
-*ngIf="logged"
-class="logout"
->
-    <button
-    (click)="cerrarSesion()"
-    class="addButton"
-    ><span class="fa-solid fa-power-off"></span> Logout</button>
-</div>
+         
       </li>
 
     </ul>
