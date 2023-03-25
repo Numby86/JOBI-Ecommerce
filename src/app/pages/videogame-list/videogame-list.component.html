@@ -1,18 +1,30 @@
+<div class="sort">
+  <ng-container *ngIf="price === 'desc' || !price ">
+    <button
+    class="addButton"
+    (click)="sort('asc')"
+    >Precio <span class="fa-solid fa-caret-up"></span></button>
+  </ng-container>
+  <ng-container *ngIf="price === 'asc'">
+    <button
+    class="addButton"
+    (click)="sort('desc')"
+    >Precio <span class="fa-solid fa-caret-down"></span></button>
+  </ng-container>
+
+  <!-- <app-sort
+  [price]=""
+  ></app-sort> -->
+</div>
 <div class="cards">
   <app-product-list
-    *ngFor="let videogameEl of products | paginate: { id: 'foo',
+    *ngFor="let videogameEl of products | sort:price | paginate: { id: 'foo',
     itemsPerPage: 15,
     currentPage: page,
     totalItems: 60 }"
     [product]="videogameEl"
     (onDetail)="getProductDetail(videogameEl._id)">
   </app-product-list>
-  <!-- <button 
-  class="add"
-  (click)="addToCart()"
-  >Añadir</button>
-</div> -->
-
 <div
 class="pagination"
 >

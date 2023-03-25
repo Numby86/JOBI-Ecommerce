@@ -60,4 +60,9 @@ export class CartDetailComponent implements OnInit{
     const totalProducts = this.cartService.totalNumProducts();
     return totalProducts;
   }
+
+  public sendOrder(products: Product[]) {
+    const order = this.cartService.sendOrder(products);
+    return order;
+  }
 }

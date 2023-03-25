@@ -13,6 +13,7 @@ import { CartService } from 'src/app/core/services/cart/cart.service';
 export class GarmentDetailComponent {
 
     public product?: Product;
+    
 
     constructor (
       private activatedRoute: ActivatedRoute,
