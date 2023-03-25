@@ -29,7 +29,7 @@ class="logout"
     <button
     (click)="cerrarSesion()"
     class="addButton"
-    ><span class="fa-solid fa-power-off"></span> Logout</button>
+    ><span class="fa-solid fa-power-off"></span> {{ user }}</button>
 </div>
          <div
          (click)="onToggleCart()"
@@ -49,7 +49,7 @@ class="logout"
     </ul>
   </nav>
   <div
-  class="list__cart"
+  class="listCart"
   [ngClass]="{show:viewCart}"
   >
   <app-cart></app-cart>

@@ -13,16 +13,24 @@ export class HeaderComponent implements OnInit {
   public logged: boolean = false;
   public logOut: boolean = false;
   public viewCart: boolean = false;
+  public user: string | null;
 
+  
+  
   constructor(
     private router: Router,
     private userService: UserServiceService,
     private cartService: CartService
-  ){}
+  ){
+    this.user = this.userService.getUser();
+    console.log(this.user);
+  }
 
   public ngOnInit(): void {
     this.userService.isLogged();
     this.userService.userLogged$.subscribe((isLogged) => this.logged = isLogged);
+    
+    
   }
 
   public navigateToList() {

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-sort',
@@ -9,8 +9,10 @@ export class SortComponent {
 
   @Input() public price?: string;
 
-  public sort(value: string){
-    this.price = value;
-    console.log(this.price);
+  @Output() public sort: EventEmitter<void> = new EventEmitter<void>();
+
+  public sortOut(){
+    this.sort.emit()
   }
+
 }
