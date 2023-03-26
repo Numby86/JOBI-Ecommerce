@@ -3,7 +3,6 @@ import { ProductAdd } from './Order.model';
 import { Login } from './../user/login.model';
 import { Router } from '@angular/router';
 import { Product } from 'src/app/core/services/products/models/product.models';
-import { Products } from './ApiProducts.model';
 import { BehaviorSubject, Observable, Subscription } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -20,7 +19,7 @@ export class CartService {
   private myList: Product[] = [];
 
   private myCart = new BehaviorSubject<Product[]>([]);
-  public myCart$ = this.myCart.asObservable();
+  myCart$ = this.myCart.asObservable();
 
   constructor(
     private http: HttpClient,
