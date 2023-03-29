@@ -77,6 +77,12 @@
   color: #222E3A;
 }
 
+.wrap__header_icons{
+  & span {
+    color: var(--font-color-main);
+  }
+}
+
 @media screen and (min-width: 320px) and (max-width: 578px){
   .wrap{
     align-items: center;
