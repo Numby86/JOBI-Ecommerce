@@ -29,3 +29,25 @@
       color: cadetblue;
     }
 }
+
+@media screen and (min-width: 320px) and (max-width: 578px){
+
+    .error{
+        width: calc(100% - 5%);
+        margin: auto;
+        height: calc(100% - 5%);
+        margin-top: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        &__image{
+            width: 75%;
+            height: 75%;
+        }
+    }
+
+    .cart-btn{
+        width: 110px;
+    }
+}
