@@ -11,6 +11,8 @@ import { ProductDetailComponent } from './components/product-detail/product-deta
 import { CartComponent } from './components/cart/cart.component';
 import { CartDetailComponent } from './components/cart-detail/cart-detail.component';
 import { SortComponent } from './components/sort/sort.component';
+import { ProductDiscountedListComponent } from './components/product-discounted-list/product-discounted-list.component';
+import { ProductDiscountedDetailComponent } from './components/product-discounted-detail/product-discounted-detail.component';
 
 
 
@@ -25,7 +27,9 @@ import { SortComponent } from './components/sort/sort.component';
     ProductDetailComponent,
     CartComponent,
     CartDetailComponent,
-    SortComponent
+    SortComponent,
+    ProductDiscountedListComponent,
+    ProductDiscountedDetailComponent
   ],
   imports: [
     CommonModule,
@@ -37,6 +41,8 @@ import { SortComponent } from './components/sort/sort.component';
     CartDetailComponent,
     ProductListComponent,
     ProductDetailComponent,
+    ProductDiscountedListComponent,
+    ProductDiscountedDetailComponent,
     SortPipe,
     SortComponent
   ]

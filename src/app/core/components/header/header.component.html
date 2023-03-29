@@ -1,51 +1,65 @@
-<div class="header">
-  <div>
+<div class="wrap">
+  <div class="wrap__header_logo" >
     <a  [routerLink]="['home']">
       <img class="logo" src="../../../../assets/public/img/logo-jovi.svg" />
     </a>
-  </div>  
+  </div>
 
-  <nav class="header__nav">
-    <ul class="header__nav_ul">
-      <li class="header__nav_li">
-        <a class="header__nav_a" [routerLink]="['book-list']"> Libros </a>
-        <a class="header__nav_a" [routerLink]="['garment-list']"> Ropa </a>
-        <a class="header__nav_a" [routerLink]="['videogames']"> Videojuegos </a>
-        <a class="header__nav_a" [routerLink]="['toys-list']"> Juguetes </a>
-        
-         <ng-container *ngIf="!logged">
-          <a [routerLink]="['login']">
-            <span class="fa-solid fa-user"></span>
-        </a>
-          <a [routerLink]="['register']">
+  <div class="wrap__header_icons" >
+    <li class="wrap__header_icon">
+      <ng-container *ngIf="!logged">
+    <a [routerLink]="['login']">
+         <span class="fa-solid fa-user"></span>
+     </a>
+     <a [routerLink]="['register']">
             <span class="fa-solid fa-users"></span>
      </a>
-         </ng-container>
-         
-         <div
-*ngIf="logged"
-class="logout"
->
-    <button
-    (click)="cerrarSesion()"
-    class="addButton"
-    ><span class="fa-solid fa-power-off"> </span> {{ userName }}</button>
+    </ng-container>
+    <div *ngIf="logged" class="logout">
+        <div
+        class="perfil"
+        >
+        <img src="https://img.icons8.com/cotton/512/gender-neutral-user--v1.png" alt="icono">
+          <a class="cartButon" [routerLink]="['account']"> {{ user }}</a>
+        </div>
+      <button (click)="cerrarSesion()" class="addButton">
+        <span class="fa-solid fa-power-off"></span>
+      </button>
+    </div>
+     <div
+     (click)="onToggleCart()"
+     class="cart"
+     >
+      <div
+      class="cart__items">
+        <p
+        class="cart__items-num"
+        >{{ totalNumProducts() }}</p>
+      </div>
+        <span class="fa-solid fa-cart-shopping"></span>
+     </div>
+          </li>
+  </div>
 </div>
-         <div
-         (click)="onToggleCart()"
-         class="cart"
-         >
-          <div
-          class="cart__items">
-            <p
-            class="cart__items-num"
-            >{{ totalNumProducts() }}</p>
-          </div>
-            <span class="fa-solid fa-cart-shopping"></span>
-         </div>
-         
-      </li>
 
+
+
+<div class="header">
+
+   <div class="toggle-menu"  id="toggle-menu">
+    <i class="fa-solid fa-bars"></i>
+   </div>
+
+  <nav class="header__nav">
+    <ul class="header__nav_ul" id="header__nav_ul">
+      <li class="header__nav_li">
+        <a class="header__nav_a" [routerLink]="['book-list']"> Libros </a></li>
+        <li class="header__nav_li">
+        <a class="header__nav_a" [routerLink]="['garment-list']"> Ropa </a></li>
+        <li class="header__nav_li">
+        <a class="header__nav_a" [routerLink]="['videogames']"> Videojuegos </a></li>
+        <li class="header__nav_li">
+        <a class="header__nav_a" [routerLink]="['toys-list']"> Juguetes </a></li>
     </ul>
   </nav>
   <div

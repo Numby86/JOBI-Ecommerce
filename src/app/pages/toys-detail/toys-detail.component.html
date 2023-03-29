@@ -1,36 +1,10 @@
-<div
-class="card-detail"
+<div class="card-detail"
 *ngIf="product">
-<div>
-    <img [src]="product.image" 
-    class="card-detail__img">
-</div>
-
-
-<div *ngIf="product; else NotFound"
-    class="card-detail__content"
->
-    <p class="card-detail__content__name">{{ product.name }}</p>
-    <p class="card-detail__content__brand">{{ product.brand }}</p>
-    <p class="card-detail__content__price">{{ product.price }}€</p>
-    <p class="card-detail__content__decades">{{ product.decades }}</p>
-    <p class="card-detail__content__description">{{ product.description }}</p>
-    <p class="card-detail__content__age">{{ product.age }}</p>
-    <div
-    class="div-buttons"
-    >
-    <button 
-    class="cart-btn"
-    (click)="backToList()"
-    >Volver</button>
-    <button 
-    class="cart-btn"
-    (click)="addToCart(product)"
-    >Añadir <span class="fa-sharp fa-solid fa-basket-shopping"></span></button>
-    </div>
-</div>
-<ng-template #NotFound>
-    <p>No hay un juguete con ese Id</p>
-</ng-template>
-
+    <app-product-detail
+    *ngIf="product"
+        [product]="product"
+        (onBack)="backToList()"
+        (onAdd)="addToCart(product)"
+        >
+        </app-product-detail>
 </div>

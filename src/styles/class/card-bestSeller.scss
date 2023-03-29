@@ -1,9 +1,10 @@
 
 .bestSeller{
     width: 100%;
-    height: 1000px;
+    //height: 1000px;
     // background-color: white;
-    padding-top: 80px;           
+    padding-top: 80px; 
+    padding-bottom: 90px;          
 }
 .bestSeller__container{ 
     display: flex;
@@ -24,8 +25,8 @@
     cursor: pointer;
     border: rgb(255, 255, 255) 0.2em solid;
     &_img{
-        width: 400px;
-        height: 700px;
+        width: 395px;
+        height: 695px;
         box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
     }
    }

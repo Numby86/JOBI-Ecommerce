@@ -12,27 +12,24 @@
     >Precio <span class="fa-solid fa-caret-down"></span></button>
   </ng-container>
 
-  <!-- <app-sort
-  [price]="price"
-  ></app-sort> -->
 </div>
 <div class="cards">
   <app-product-list
     *ngFor="let videogameEl of products | sort:price | paginate: { id: 'foo',
     itemsPerPage: 15,
-    currentPage: page,
-    totalItems: 60 }"
+    currentPage: page }"
     [product]="videogameEl"
     (onDetail)="getProductDetail(videogameEl._id)">
   </app-product-list>
+</div>
 <div
 class="pagination"
 >
   <pagination-controls 
   (pageChange)="page = $event" 
   id="foo"
-  previousLabel="Previous"
-  nextLabel="Next"
+  previousLabel="Anterior"
+  nextLabel="Siguiente"
   >
   </pagination-controls>
 </div>

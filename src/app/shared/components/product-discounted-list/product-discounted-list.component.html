@@ -1,0 +1,23 @@
+<div
+*ngIf="discountedProduct"
+class="card">
+    <img [src]="discountedProduct.image" alt="image_book" class="card__img" 
+    >
+    <div>
+        <p class="card__name">{{ discountedProduct.name }}</p>
+        <p class="card__price" [ngStyle]="{color: 'lightgrey', textDecoration: 'line-through'}">{{ discountedProduct.price }} €</p>
+        <p class="card__price">{{ discountedProduct.lowPrice }} €</p>
+        
+        <div class="div_buttons" [ngStyle]="{display: 'flex', flexDirection: 'row', justifyContent: 'center', marginBottom: '5%'}">
+            <button 
+            class="addButton"
+            (click)="navigateToDiscountedDetail()"
+            >+ info</button>
+            <button 
+            class="addButton"
+            (click)="addToCart(discountedProduct)"
+            >Añadir <span class="fa-sharp fa-solid fa-basket-shopping"></span></button>
+        </div>
+    </div>
+</div>
+

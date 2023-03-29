@@ -1,7 +1,7 @@
 <div
 class="form"
 >
-<p>INICIA SESION</p>
+<p>INICIA SESIÓN</p>
     <form
     *ngIf="logForm"
     (submit)="sendFormulario()"
@@ -23,7 +23,7 @@ class="form"
     *ngIf="!logForm.get('email')?.valid 
       && logForm.get('email')?.touched 
       && logForm.get('email')?.errors?.['pattern']"
-  >No es un formato de email valido</p>
+  >No es un formato de email válido</p>
         <input
         name="password"
         formControlName="password"
@@ -56,8 +56,8 @@ class="form"
     </form>
     <h3
     class="form__content-loginNotUser"
-    >Aun no eres usuario? 
+    >¿Aún no eres usuario? 
     <a 
       (click)="goToRegister()"
-    >REGISTRATE</a></h3>
+    >Regístrate</a></h3>
 </div>

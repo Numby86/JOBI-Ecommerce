@@ -1,12 +1,11 @@
-<div class="card-detail"
-*ngIf="product">
-  
+<div class="card-detail" *ngIf="product">
+
     <div>
-        <img class="card-detail__img" [src]="product.image">  
+        <img class="card-detail__img" [src]="product.image">
     </div>
 
     <div class="card-detail__content" *ngIf="product; else bookNotFound">
-        
+
         <p class="card-detail__content__name">{{ product.name }}</p>
         <p class="card-detail__content__price">{{ product.price }}€</p>
         <p class="card-detail__content__description">{{ product.description }}</p>
@@ -25,24 +24,26 @@
         <p class="card-detail__content__category">categoria: {{ product.category }}</p>
 
         <ng-container *ngIf="product.category === 'ropa'">
-             <p class="card-detail__content__size">Talla: {{ product.size }}</p>
+            <p class="card-detail__content__size">Talla: {{ product.size }}</p>
             <p class="card-detail__content__color">Color: {{ product.color }}</p>
         </ng-container>
 
+        <ng-container *ngIf="product.category === 'juguetes'">
+            <p class="card-detail__content__brand">{{ product.brand }}</p>
+            <p class="card-detail__content__decades">{{ product.decades }}</p>
+            <p class="card-detail__content__age">{{ product.age }}</p>
+        </ng-container>
+
+        <ng-container *ngIf="product.category === 'videojuegos'">
+            <p class="card-detail__content__plataforma">Plataforma: {{ product.platform }}</p>
+        </ng-container>
 
 
-        <div
-        class="div-buttons"
-        >
+        <div class="div-buttons">
 
-         <button 
-        class="cart-btn"
-        (click)="backList()"
-        >Volver</button>
-        <button 
-        class="cart-btn"
-        (click)="addCart()"
-        >Añadir <span class="fa-sharp fa-solid fa-basket-shopping"></span></button>
+            <button class="cart-btn" (click)="backList()">Volver</button>
+            <button class="cart-btn" (click)="addCart()">Añadir <span
+                    class="fa-sharp fa-solid fa-basket-shopping"></span></button>
         </div>
     </div>
 

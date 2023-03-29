@@ -8,6 +8,13 @@ import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 export class AppComponent implements OnInit {
   ngOnInit(): void {
 
+    const toggleMenuElement = document.getElementById('toggle-menu');
+    const mainMenuElement = document.getElementById('header__nav_ul');
+
+    toggleMenuElement?.addEventListener('click', () => {
+      mainMenuElement?.classList.toggle('header__nav_ul--show');
+    });
+    
     const userPrefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
 
     const userPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -28,5 +35,7 @@ export class AppComponent implements OnInit {
     document.documentElement.className = themeChoise;
     
   }
+
+  
  
 }

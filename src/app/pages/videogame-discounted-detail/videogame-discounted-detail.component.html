@@ -1,0 +1,10 @@
+<div class="card-detail"
+*ngIf="discountedProduct">
+    <app-product-discounted-detail
+    *ngIf="discountedProduct"
+        [discountedProduct]="discountedProduct"
+        (onBack)="backToList()"
+        (onAdd)="addToCart(discountedProduct)"
+        >
+        </app-product-discounted-detail>
+</div>

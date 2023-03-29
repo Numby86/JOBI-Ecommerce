@@ -1,0 +1,39 @@
+<div class="sort">
+    <ng-container *ngIf="price === 'desc' || !price ">
+      <button
+      class="addButton"
+      (click)="sort('asc')"
+      >Precio <span class="fa-solid fa-caret-up"></span></button>
+    </ng-container>
+    <ng-container *ngIf="price === 'asc'">
+      <button
+      class="addButton"
+      (click)="sort('desc')"
+      >Precio <span class="fa-solid fa-caret-down"></span></button>
+    </ng-container>
+  </div>
+
+    <div 
+    class="cards">
+        <app-product-discounted-list
+            *ngFor="let bookEl of discountedProducts | sort:price 
+            | paginate: { id: 'foo',
+            itemsPerPage: 15,
+            currentPage: page }"
+            [discountedProduct]="bookEl"
+            (onDiscountedDetail)="getDiscountedProductDetail(bookEl._id)"
+        >
+        </app-product-discounted-list>
+    </div>
+
+<div
+class="pagination"
+>
+    <pagination-controls 
+    (pageChange)="page = $event" 
+    id="foo"
+    previousLabel="Anterior"
+    nextLabel="Siguiente"
+    >
+    </pagination-controls>
+</div>

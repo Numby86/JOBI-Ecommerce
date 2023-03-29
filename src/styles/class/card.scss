@@ -8,8 +8,8 @@
 }
 
 .card {
-  width: 400px;
-  margin-right: 24px;
+  width: 390px;
+  margin-right: 22px;
   box-shadow: 0.5em 0.3em 0.7em #00000025;
   margin-bottom: 24px;
   //background: rgb(255, 255, 255);
@@ -19,7 +19,7 @@
   cursor: pointer;
 
   &__img {
-    width: 400px;
+    width: 384px;
     height: 600px;
     object-fit: cover;
   }

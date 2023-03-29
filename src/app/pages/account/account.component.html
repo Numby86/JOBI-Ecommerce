@@ -1,1 +1,47 @@
-<p>account works!</p>
+<div
+class="account"
+>
+    <div
+    class="account__user">
+        <img
+        src="https://img.icons8.com/cotton/512/gender-neutral-user--v1.png" alt="Logo user">
+        <div
+        class="account__user-data"
+        >
+            <p>Nombre: {{ userName }}</p>
+            <p>Email: {{ userEmail }}</p>
+            <p>Telefono: {{ userPhone }}</p>
+        </div>
+
+    </div>
+    <div class="account__orders">
+    <div
+    *ngFor="let order of orders; let i = index"
+    class="account__oneOrder"
+    >
+    <div
+    class="account__products">
+        <h4 class="ref">Pedido ref: {{ pedidoRef }}</h4>
+        <h4>{{ date | date }}</h4>
+        <h4>Total: {{ total }}€</h4>
+    </div>
+
+    <div
+    class="account__products-data"
+     *ngFor="let products of order">
+        <img 
+        class="account__products-data" [src]="products.image" alt="imagen {{ products.name }}">
+        <p
+        class="account__products-data-name"
+        >Articulo: {{ products.name }}</p>
+        <p
+        class="account__products-data-price"
+        >{{ products.price }}€</p>
+        <p
+        class="account__products-data-stock"
+        >{{ products.stock }} x uds.</p>
+        
+    </div>
+    </div>
+    </div>
+</div>

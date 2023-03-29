@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ToysDetailRoutingModule } from './toys-detail-routing.module';
 import { ToysDetailComponent } from './toys-detail.component';
 import { RouterModule } from '@angular/router';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 @NgModule({
@@ -12,7 +13,8 @@ import { RouterModule } from '@angular/router';
   imports: [
     CommonModule,
     ToysDetailRoutingModule,
-    RouterModule
+    RouterModule,
+    SharedModule
   ]
 })
 export class ToysDetailModule { }

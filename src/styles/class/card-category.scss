@@ -3,7 +3,7 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 50px;
-    padding-top: 50px;
+    padding-top: 20px;
     padding-bottom: 100px;
    
     
@@ -18,23 +18,23 @@
 }
 
 .card__Category {
-    width: 290px;
-    height: 300px;  
+    width: 370px;
+    height: 380px;  
     border-radius: 20px;
-    background: linear-gradient(135deg, #ffffff 0%, #ffffff 100%);
+   // background: linear-gradient(135deg, #ffffff 0%, #ffffff 100%);
     //background-color: rgb(241, 241, 241);
     position: relative;
-    padding: 1.8rem;
+    padding: 2.5 rem;
     transition: 0.3s ease-out;  
     overflow: visible;
-    border: rgb(255, 255, 255) 0.2em solid;
+    border: rgb(255, 255, 255) 0.17em solid;
     cursor: pointer;
    }    
    
    .card__Category_details {
     color: rgb(0, 0, 0);
     height: 100%;
-    gap: .5em;
+    
     display: grid;
     place-content: center;
    }
@@ -46,12 +46,14 @@
     color: #222E3A;
     text-align: center;
     padding-top: 15px;
+
    }
    
    /*Hover*/
    .card__Category:hover {
-    border-color: #222E3A;  
+    border-color:  #222E3A;  
     box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+ 
    }
    
    .card__Category:hover .card-button {

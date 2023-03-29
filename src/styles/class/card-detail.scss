@@ -49,3 +49,39 @@
     }
 
 }
+
+@media screen and (min-width: 320px) and (max-width: 576px) {
+    .card-detail{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        width: 100%;
+        gap: 50px;
+        padding-top: 1px;
+        padding-bottom: 55px;
+    
+        &__img{
+            width: 383px;   
+            height: 550px;  
+            box-shadow: 0.5em 0.3em 0.7em #00000035;
+            object-fit: cover;        
+        }
+    }
+
+    .card-detail__content{
+        width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+        &__name{
+            font-size: 23px;
+            width: 360px;
+        }
+        &__description{
+            width: 70%;
+            padding-bottom: 15px;
+        }
+
+       
+    
+    }
+}

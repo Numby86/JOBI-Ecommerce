@@ -36,24 +36,24 @@ class="form"
         <input
         name="phone"
         formControlName="phone"
-        placeholder="Introduzca su telefono" 
+        placeholder="Introduzca su teléfono" 
         class="form__content-phone"
         type="text">
         <p
     *ngIf="!regForm.get('phone')?.valid 
       && regForm.get('phone')?.touched 
       && regForm.get('phone')?.errors?.['minlength']"
-  >El telefono debe 9 caracteres</p>
+  >El teléfono debe tener 9 caracteres</p>
   <p
     *ngIf="!regForm.get('phone')?.valid 
       && regForm.get('phone')?.dirty 
       && regForm.get('phone')?.errors?.['maxlength']"
-  >El telefono debe 9 caracteres</p>
+  >El teléfono debe tener 9 caracteres</p>
   <p
     *ngIf="!regForm.get('phone')?.valid 
       && regForm.get('phone')?.dirty 
       && regForm.get('phone')?.errors?.['pattern']"
-  >Solo se pueden usar numeros en este campo</p>
+  >Solo se pueden usar números en este campo</p>
         <select
         class="form__content-avatar"
         name="avatar" 
@@ -81,7 +81,7 @@ class="form"
     *ngIf="!regForm.get('email')?.valid 
       && regForm.get('email')?.touched 
       && regForm.get('email')?.errors?.['pattern']"
-  >No es un formato de email valido</p>
+  >No es un formato de email válido</p>
         <input
         name="password"
         formControlName="password"

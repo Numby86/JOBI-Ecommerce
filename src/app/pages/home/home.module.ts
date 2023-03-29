@@ -10,10 +10,6 @@ import { ImageSliderComponent } from 'src/app/shared/components/image-slider/ima
 import { SpanComponent } from './component-span/span.component';
 
 
-
-
-
-
 @NgModule({
   declarations: [
     HomeComponent,

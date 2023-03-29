@@ -7,7 +7,7 @@
   margin-top: 25px;
   .cart-btn{
     font-size: 16px;
-    width: 30%;
+    //width: 30%;
     font-weight: bold;
     align-self: center;
     border: none;
@@ -43,4 +43,10 @@
 }
 .fa-plus{
   font-size: 20px;
+}
+
+@media screen  and (min-width: 320px) and (max-width: 576px){
+  .div-buttons{
+    width: 400px;
+  }
 }

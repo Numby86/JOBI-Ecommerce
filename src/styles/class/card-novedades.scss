@@ -1,11 +1,12 @@
 
 .novedades{
     width: 100%;
-    height: 800px;
+    //height: 800px;
     padding-top: 80px;
     background-image:url("../../assets/public/img/background_img_novedades.jpg");
     background-position: right;
     background-size: cover; 
+    padding-bottom: 100px;
 }
 .text__novedades{
     color: #222E3A;
@@ -31,19 +32,37 @@
 //animation
 
 .card__novedades {
-    width: 350px;
+    //width: 350px;
     height: 400px;  
-    background: rgb(226, 226, 226);
+    //background: rgb(226, 226, 226);
     transition: all 300ms;
     cursor: pointer;
     border-radius: 10px;
 
     &_img{
         border-radius: 10px;
+        width: 300px;   
     }
    }
    
    .card__novedades:hover {
     opacity: 0.8;
     transform: scale(1.02);
+   }
+
+   @media screen and (min-width: 320px) and (max-width: 896px){
+    .novedades__container{ 
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;  
+        gap: 30px;      
+        padding-top: 80px;
+        padding-left: 0px;
+        border-radius: 30px;
+    }
+    .text__novedades{
+        background-color: rgb(247 247 247 / 30%);
+        padding-bottom: 40px;
+        padding-top: 40px;
+    }
    }

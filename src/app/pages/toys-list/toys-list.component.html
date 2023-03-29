@@ -16,8 +16,7 @@
   <app-product-list
     *ngFor="let toyEl of products | sort:price | paginate: { id: 'foo',
     itemsPerPage: 15,
-    currentPage: page,
-    totalItems: 60 }"
+    currentPage: page}"
     [product]="toyEl"
     (onDetail)="getProductDetail(toyEl._id)"
     >
@@ -30,8 +29,8 @@ class="pagination"
   <pagination-controls 
   (pageChange)="page = $event" 
   id="foo"
-  previousLabel="Previous"
-  nextLabel="Next"
+  previousLabel="Anterior"
+  nextLabel="Siguiente"
   >
   </pagination-controls>
 </div>

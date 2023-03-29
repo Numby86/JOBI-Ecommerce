@@ -6,10 +6,8 @@ import { Register } from './register.model';
 import { HttpClient } from '@angular/common/http';
 import { LoadingService } from './../loading/loading.service';
 
-// const API_URL_REGISTER = 'https://nodejs-proyectodb-mpl0haqpi-numby86.vercel.app/user/register';
-const API_URL_REGISTER = 'https://project-jobi-api.vercel.app/user/register';
 
-// const API_URL_LOGIN_JWT = 'https://nodejs-proyectodb-mpl0haqpi-numby86.vercel.app/user/login-jwt';
+const API_URL_REGISTER = 'https://project-jobi-api.vercel.app/user/register';
 const API_URL_LOGIN_JWT = 'https://project-jobi-api.vercel.app/user/login-jwt';
 
 const TOKEN_KEY = 'user-token';
@@ -45,7 +43,9 @@ export class UserServiceService {
           id: res.user._id,
           email: res.user.email,
           name: res.user.name,
-          image: res.user.image
+          phone: res.user.phone,
+          surname: res.user.surname,
+          avatar: res.user.avatar
         });
         localStorage.setItem(TOKEN_KEY, userStore);
         this.userLogged$.next(true);
@@ -78,6 +78,30 @@ export class UserServiceService {
   public getUserName(): string | null {
     const checkUser = localStorage.getItem(TOKEN_KEY);
     return checkUser ? JSON.parse(checkUser).name : null;
+  }
+
+  public getUserSurname(): string | null {
+    const checkUser = localStorage.getItem(TOKEN_KEY);
+    return checkUser ? JSON.parse(checkUser).surname : null;
+  }
+
+  public getUserEmail(): string | null {
+    const checkUser = localStorage.getItem(TOKEN_KEY);
+    return checkUser ? JSON.parse(checkUser).email : null;
+  }
+  public getUserId(): string | null {
+    const checkUser = localStorage.getItem(TOKEN_KEY);
+    return checkUser ? JSON.parse(checkUser).id : null;
+  }
+
+  public getUserImage(): string | null {
+    const checkUser = localStorage.getItem(TOKEN_KEY);
+    return checkUser ? JSON.parse(checkUser).avatar : null;
+  }
+
+  public getUserPhone(): string | null {
+    const checkUser = localStorage.getItem(TOKEN_KEY);
+    return checkUser ? JSON.parse(checkUser).phone : null;
   }
 
 }

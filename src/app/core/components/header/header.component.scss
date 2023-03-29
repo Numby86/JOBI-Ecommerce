@@ -53,8 +53,48 @@
     opacity: 1;
     transform: scale(1,1);
   }
+.addButton{
+  background-color: lightcoral;
+  border: lightcoral 1px solid;
+  &:hover{
+    background-color: white;
+    color: lightcoral;
+  }
 
-// .fa-power-off{
-//   font-weight: bold;
-//   color: lightcoral;
-// }
+}
+.perfil{
+  border-radius: 20px;
+  display: flex;
+  font-size: 15px;
+  justify-content: center;
+  align-items: center;
+  background-color: cadetblue;
+  font-weight: bold;
+  border: 1px solid cadetblue;
+  margin-bottom: 5px;
+  padding: 14px 12px;
+  &:hover{
+    background-color: whitesmoke;
+    color: cadetblue;
+  }
+  & a{
+    font-size: 15px;
+    color: white;
+    
+    cursor: pointer;
+    &:hover{
+      color: cadetblue;
+    }
+  }
+  & img{
+    width: 20px;
+    height: 20px;
+  }
+
+}
+.logout{
+  display: flex;
+  flex-direction: row;
+  max-height: 30px;
+  gap: 5px;
+}

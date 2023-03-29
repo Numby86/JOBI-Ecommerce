@@ -1,4 +1,4 @@
-import { ProductAdd } from './../../../core/services/cart/Order.model';
+import { UserServiceService } from './../../../core/services/user/user-service.service';
 import { Product } from 'src/app/core/services/products/models/product.models';
 import { CartService } from './../../../core/services/cart/cart.service';
 import { Router } from '@angular/router';
@@ -16,22 +16,30 @@ export class CartDetailComponent implements OnInit{
   public myCart$ = this.cartService.myCart$;
   public products: Product[] = [];
   public total: number = 0;
+  public oneOrder: Product[] = [];
+  public userId: string | null;
+  public myLyst: any;
+  public totalPrice: string = '';
 
   constructor(
     private router: Router,
     private cartService: CartService,
+    private userService: UserServiceService
   ){
-    console.log(this.myCart$);
+    this.userId = this.userService.getUserId();
   }
 
   public ngOnInit(): void {
 
     this.cartService.getApiProducts().subscribe((productsApi) => {
       this.products = productsApi;
-
-      
-      
     })
+
+    this.cartService.getMyList().subscribe((list) => {
+      this.myLyst = list;
+    })
+
+    this.totalPrice = this.cartService.totalCart();
 
   }
 
@@ -68,11 +76,15 @@ export class CartDetailComponent implements OnInit{
     return totalProducts;
   }
 
-  public sendOrder(products: any) {
-    const order = this.cartService.sendOrder(products);
-    console.log(order);
-    return order;
+  public sendOrder() {
+    const userId = this.userId;
+    const products = this.myLyst;
+    const total = this.totalPrice;
+    const newOrder = {
+      "products": products,
+      "user": userId,
+      "total": total
+  };
+    return this.cartService.sendOrder(newOrder).subscribe();
   }
-
-  // orderRouter.post('/', async (req, res, next) => {    try {      const newOrder = new Order({        items: req.body.items.map(item => Object.assign({}, item)),        total: req.body.total      });      const createOrder = await newOrder.save();      return res.status(201).json(createOrder);    } catch (err) {      next(err);    }  });
 }

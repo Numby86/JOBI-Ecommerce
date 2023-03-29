@@ -1,0 +1,56 @@
+<div class="card-detail" *ngIf="discountedProduct">
+
+    <div>
+        <img class="card-detail__img" [src]="discountedProduct.image">
+    </div>
+
+    <div class="card-detail__content" *ngIf="discountedProduct; else bookNotFound">
+
+        <p class="card-detail__content__name">{{ discountedProduct.name }}</p>
+        <p class="card-detail__content__price" [ngStyle]="{color: 'lightgrey', textDecoration: 'line-through'}">{{ discountedProduct.price }}€</p>
+        <p class="card-detail__content__price">{{ discountedProduct.lowPrice }}€</p>
+        <p class="card-detail__content__description">{{ discountedProduct.description }}</p>
+
+        <ng-container *ngIf="discountedProduct.category === 'libros'">
+            <p class="card-detail__content__type"> {{ discountedProduct.type }}</p>
+            <p class="card-detail__content__author">{{ discountedProduct.author }}</p>
+            <p class="card-detail__content__pages">Nº de páginas: {{ discountedProduct.pages }}</p>
+            <p class="card-detail__content__editorial">Editorial: {{ discountedProduct.editorial }}</p>
+            <p class="card-detail__content__languague">Idioma: {{ discountedProduct.languague }}</p>
+            <p class="card-detail__content__bookbinding">Encuadernación: {{ discountedProduct.bookbinding }}</p>
+            <p class="card-detail__content__year">Año de edición: {{ discountedProduct.yearEdition }}</p>
+            <p class="card-detail__content__isbn">ISBN: {{ discountedProduct.isbn }}</p>
+        </ng-container>
+
+        <p class="card-detail__content__category">categoria: {{ discountedProduct.category }}</p>
+
+        <ng-container *ngIf="discountedProduct.category === 'ropa'">
+            <p class="card-detail__content__size">Talla: {{ discountedProduct.size }}</p>
+            <p class="card-detail__content__color">Color: {{ discountedProduct.color }}</p>
+        </ng-container>
+
+        <ng-container *ngIf="discountedProduct.category === 'juguetes'">
+            <p class="card-detail__content__brand">{{ discountedProduct.brand }}</p>
+            <p class="card-detail__content__decades">{{ discountedProduct.decades }}</p>
+            <p class="card-detail__content__age">{{ discountedProduct.age }}</p>
+        </ng-container>
+
+        <ng-container *ngIf="discountedProduct.category === 'videojuegos'">
+            <p class="card-detail__content__plataforma">Plataforma: {{ discountedProduct.platform }}</p>
+        </ng-container>
+
+
+        <div class="div-buttons">
+
+            <button class="cart-btn" (click)="backList()">Volver</button>
+            <button class="cart-btn" (click)="addCart()">Añadir <span
+                    class="fa-sharp fa-solid fa-basket-shopping"></span></button>
+        </div>
+    </div>
+
+
+    <ng-template #bookNotFound>
+        <p>No hay un libro con ese Id</p>
+    </ng-template>
+
+</div>

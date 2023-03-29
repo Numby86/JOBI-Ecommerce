@@ -4,16 +4,16 @@
     height: 200px;
     color: white;
     text-align: center;
-    padding-top: 20px;
+    padding-top: 10px;
     font-size: 20px;
     font-weight: normal;
     letter-spacing: 1px;
     
-    &__text{
-        padding-bottom: 5px;
-        padding-top: 25px;
+    &__text_contenido{
+       // padding-bottom: 5px;
+        padding-top: 15px;
         display: grid;
-        gap: 5px;
+        color: white;
     }
 
     &__img{
@@ -26,6 +26,8 @@
     flex-wrap: wrap;
     gap: 30px;
     justify-content: center;
+    padding-bottom: 10px;
+    padding-top: 10px;
 }
 
 .footer__pago{

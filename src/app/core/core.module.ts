@@ -5,6 +5,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { LoadingComponent } from './components/loading/loading.component';
 import { RouterLink, RouterModule } from '@angular/router';
+import { ScrollToTopComponent } from './components/scroll-to-top/scroll-to-top.component';
 
 
 
@@ -12,7 +13,8 @@ import { RouterLink, RouterModule } from '@angular/router';
   declarations: [
     FooterComponent,
     HeaderComponent,
-    LoadingComponent
+    LoadingComponent,
+    ScrollToTopComponent
   ],
   imports: [
     CommonModule,
@@ -23,7 +25,8 @@ import { RouterLink, RouterModule } from '@angular/router';
   exports: [
     HeaderComponent,
     FooterComponent,
-    LoadingComponent
+    LoadingComponent,
+    ScrollToTopComponent
   ]
 })
 export class CoreModule { }

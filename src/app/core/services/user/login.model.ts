@@ -12,9 +12,11 @@ export interface LoginJWT {
 export interface User {
     _id:       string;
     email:     string;
-    name?: string;
-    image?: string;
     password?:  string | null;
+    name?: string;
+    surname?: string;
+    phone?: number;
+    avatar?: string;
     createdAt?: Date;
     updatedAt?: Date;
     __v?:       number;

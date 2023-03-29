@@ -2,7 +2,7 @@
     class="product__wrapper"
 >
     <article
-    *ngFor="let product of myCart$ | async"
+    *ngFor="let product of myLyst"
     class="productCart"
     >
     <img [src]="product.image" alt="imagen producto" class="productCart__body-image">
@@ -33,13 +33,12 @@
         (click)="deleteProduct(product._id)" 
         class="fa-solid fa-trash"></span>
     </div>
-            
+    
     </article>
     <div class="cartTotal">
         <p class="cartTotal__total">Total : {{ totalCart() }} €</p>
     </div>
     <button
-    
-        (click)="sendOrder('hola')"
-        class="cart-btn">Comprar</button>
+    (click)="sendOrder()"
+    class="cart-btn">Comprar</button>
 </div>
