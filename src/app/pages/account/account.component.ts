@@ -19,7 +19,7 @@ export class AccountComponent implements OnInit{
   public userPhone: string | null = '';
 
   public orders?: any;
-  public total?: number;
+  public total?: any;
   public date?: Date;
   public pedidoRef?: string
 
@@ -39,15 +39,23 @@ export class AccountComponent implements OnInit{
 
     this.accountService.getApiProducts().subscribe((ordersApi) => {
 
-      
+      this.total = ordersApi.map((el) => {
+        return el.total;
+      })
+
 
       this.orders = ordersApi.filter((element) => {
         this.pedidoRef = element._id;
-        this.total = element.total;
+        //this.total = element.total;
         this.date = element.createdAt;
         return element.user === this.userId;
       }).map((productsOrder)=> {
-        return productsOrder.products;
+        return {
+          total: productsOrder.total,
+          products : productsOrder.products,
+          date : productsOrder.createdAt,
+          id : productsOrder._id
+        }
       }).reverse();
       console.log(this.orders);
     })

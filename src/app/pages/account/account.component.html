@@ -21,14 +21,14 @@ class="account"
     >
     <div
     class="account__products">
-        <h4 class="ref">Pedido ref: {{ pedidoRef }}</h4>
-        <h4>{{ date | date }}</h4>
-        <h4>Total: {{ total }}€</h4>
+        <h4>{{ order.date | date }}</h4>
+        <h4>Total: {{ order.total }}€</h4>
+        <h4 class="ref">Pedido ref: {{ order.id }}</h4>
     </div>
 
     <div
     class="account__products-data"
-     *ngFor="let products of order">
+     *ngFor="let products of order.products">
         <img 
         class="account__products-data" [src]="products.image" alt="imagen {{ products.name }}">
         <p
@@ -40,7 +40,7 @@ class="account"
         <p
         class="account__products-data-stock"
         >{{ products.stock }} x uds.</p>
-        
+
     </div>
     </div>
     </div>
