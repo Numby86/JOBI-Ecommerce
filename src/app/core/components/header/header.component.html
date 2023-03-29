@@ -7,6 +7,11 @@
 
   <div class="wrap__header_icons" >
     <li class="wrap__header_icon">
+      <div>
+        <a [routerLink]="['products']">
+          <span class="fa-solid fa-magnifying-glass"></span>
+       </a>
+       </div>
       <ng-container *ngIf="!logged">
     <a [routerLink]="['login']">
          <span class="fa-solid fa-user"></span>

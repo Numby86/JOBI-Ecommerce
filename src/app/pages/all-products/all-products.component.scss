@@ -1,0 +1,30 @@
+.search{
+    font-weight: bold;
+    width: 65%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: calc(100% - 20%);
+    margin: auto;
+    margin-top: 0%;
+    gap: 30px;
+    & input, select, option {
+        width: calc(100% - 70%);
+        line-height: 28px;
+        border: 2px solid transparent;
+        border-bottom-color: #777;
+        padding: .2rem 0;
+        outline: none;
+        background-color: transparent;
+        color: #0d0c22;
+        transition: .3s cubic-bezier(0.645, 0.045, 0.355, 1);
+       }
+       
+       & input:focus, input:hover {
+        outline: none;
+        padding: .2rem 1rem;
+        border-radius: 1rem;
+        border-color: cadetblue;
+       }
+}

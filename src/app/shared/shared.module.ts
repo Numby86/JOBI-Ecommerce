@@ -44,7 +44,8 @@ import { ProductDiscountedDetailComponent } from './components/product-discounte
     ProductDiscountedListComponent,
     ProductDiscountedDetailComponent,
     SortPipe,
-    SortComponent
+    SortComponent,
+    SearchPipe
   ]
 })
 export class SharedModule { }

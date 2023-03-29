@@ -101,6 +101,10 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
   {
+    path: 'products',
+    loadChildren: () => import('./pages/all-products/all-products.module').then(m => m.AllProductsModule)
+  },
+  {
     path: '**',
     loadChildren: () => import('./pages/url-not-found/url-not-found.module').then(m=> m.UrlNotFoundModule)
   }
