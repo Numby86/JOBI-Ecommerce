@@ -1,0 +1,31 @@
+.error{
+    width: calc(100% - 20%);
+    margin: auto;
+    height: calc(100% - 10%);
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    &__image{
+        width: 45%;
+        height: 45%;
+    }
+}
+.cart-btn{
+    font-size: 16px;
+    width: 10%;
+    font-weight: bold;
+    align-self: center;
+    border: none;
+    border-radius: 0.25rem;
+    margin: 0.75rem 0;
+    background-color: cadetblue;
+    color: #FFF;
+    cursor: pointer;
+    padding: 1rem;
+    &:hover{
+      background-color: whitesmoke;
+      color: cadetblue;
+    }
+}
